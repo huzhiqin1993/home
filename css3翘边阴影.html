@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>css3实现翘边阴影</title>
+<style>
+*
+{
+	margin:0;
+	padding:0;
+}
+#box
+{
+	height:300px;
+	width:1000px;
+	margin:0 auto;
+	margin-top:150px;
+}
+h1
+{
+	padding-left:365px;
+	font-family:"微软雅黑";
+}
+#box ul li
+{
+	width:271px;
+	height:171px;
+	list-style-type:none;
+	float:left;
+	border:1px solid #efefef;
+	padding:10px;
+	margin-left:30px;
+	background-color:#fff;
+	margin-top:50px;
+	position:relative;
+	box-shadow:0 1px 4px rgba(0,0,0,0.27),0 0 60px rgba(0,0,0,0.1) inset;
+	-moz-box-shadow:0 1px 4px rgba(0,0,0,0.27),0 0 60px rgba(0,0,0,0.1) inset;
+	-webkit-box-shadow:0 1px 4px rgba(0,0,0,0.27),0 0 60px rgba(0,0,0,0.1) inset;
+	-o-box-shadow:0 1px 4px rgba(0,0,0,0.27),0 0 60px rgba(0,0,0,0.1) inset;
+}
+#box li:before
+{
+	content:"";
+	background:transparent;
+	z-index:-2;
+	position:absolute;
+	width:90%;
+	height:80%;
+	left:18px;
+	bottom:8px;
+	box-shadow:0 8px 20px rgba(0,0,0,0.6);
+	-moz-box-shadow:0 8px 20px rgba(0,0,0,0.6);
+	-webkit-box-shadow:0 8px 20px rgba(0,0,0,0.6);
+	-o-box-shadow:0 8px 20px rgba(0,0,0,0.6);
+	-moz-transform:skew(-12deg) rotate(-4deg);
+	-o-transform:skew(-12deg) rotate(-4deg);
+	-ms-transform:skew(-12deg) rotate(-4deg);
+	-webkit-transform:skew(-12deg) rotate(-4deg);	
+}
+#box li:after
+{
+	content:"";
+	background:transparent;
+	z-index:-2;
+	position:absolute;
+	width:90%;
+	height:80%;
+	reght:18px;
+	bottom:8px;
+	box-shadow:0 8px 20px rgba(0,0,0,0.6);
+	-moz-box-shadow:0 8px 20px rgba(0,0,0,0.6);
+	-webkit-box-shadow:0 8px 20px rgba(0,0,0,0.6);
+	-o-box-shadow:0 8px 20px rgba(0,0,0,0.6);
+	-moz-transform:skew(12deg) rotate(4deg);
+	-o-transform:skew(12deg) rotate(4deg);
+	-ms-transform:skew(12deg) rotate(4deg);
+	-webkit-transform:skew(12deg) rotate(4deg);
+}
+</style>
+</head>
+<body>
+<div id="box">
+<h1>CSS3实现翘边阴影</h1>
+  <ul>
+    <li><img src="img/a.png"/></li>
+    <li><img src="img/b.png"/></li>
+    <li><img src="img/c.png"/></li>
+  </ul>
+</div>
+</body>
+</html>

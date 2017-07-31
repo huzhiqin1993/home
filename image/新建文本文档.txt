@@ -1,0 +1,44 @@
+#a1
+{
+	height:80px;
+	width:80px;
+	opacity:0.3;
+	position:absolute;
+	top:230px;
+	left:196px;
+	cursor:pointer;
+}
+#a2
+{
+	height:80px;
+	width:80px;
+	opacity:0.3;
+	position:absolute;
+	top:230px;
+	left:1091px;
+	cursor:pointer;
+}
+title：	
+[正确]---title标签设置合理。
+keywords：	
+[警示]---keywords标签设置不规范，或者为空。
+description：	
+[警示]---description标签设置不规范，或者为空。
+javascript：	
+[建议]---Javascript脚本建议写到.js文件中，有利于搜索引擎抓取
+style样式：	
+[建议]---CSS样式建议写到.css文件中以缩减代码的繁琐度有利于搜索引擎抓取
+flash/object：	
+[建议]---flash/object加上相关说明文字，有利于搜索引擎识别内容
+图片Alt信息：	
+[警示]---存在没有alt信息的img标签,加入这项信息可使您网页上的图片更容易被用户检索到
+frame信息：	
+[建议]---frame/frameset/iframe标签会导致spider的抓取困难，建议您尽量不要使用
+URL长度：	
+[建议]---百度建议url的最长长度不超过255byte
+html标签：	
+[正确]---html标签设置合理。
+百度快照：	
+[提示]---百度快照3天之内，请继续努力。
+百度当日收录：	
+[警告]---百度当日没有新收录，请注意加强SEO优化。

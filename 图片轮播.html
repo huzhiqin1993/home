@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>图片轮播</title>
+<style>
+body,div,span,img,a
+{
+	margin:0;padding: 0;
+	text-decoration: none;
+}
+#container
+{
+	position: relative;
+	width: 628px;
+	height: 230px;
+	overflow: hidden;
+	margin: 20px auto;
+	border:3px solid red;
+}
+
+
+#list
+{
+	width: 4400px;
+	height: 230px;
+	position: absolute;
+	z-index: 1;
+} 
+
+#list img
+{
+	width: 628px;
+	height: 230px;
+	float: left;
+}
+
+
+#buttons
+{
+	position: absolute;
+	float: left;
+	width: 100px;
+	height: 10px;
+	bottom:50px;
+	left:175px;
+	z-index: 2;
+} 
+#buttons span
+{
+	float:left;
+	height: 10px;
+	width: 10px;
+	margin-right: 5px;
+	cursor: pointer;
+	border:1px solid #000;
+	border-radius: 50%;
+	background: #ccc;
+	z-index: 2;
+}
+
+
+#buttons .on
+{
+	background: red;
+} 
+.arrow
+{
+	cursor: pointer;
+	display: none;
+	position:absolute;
+	height: 30px;
+	width: 30px;
+	top:175px;
+	font-size: 25px;
+	line-height: 25px;
+	text-align:center;
+	color: #ccc;
+	z-index: 2;
+	background-color: RGBA(0,0,0,.3);
+}
+
+
+.arrow:hover
+{
+	background-color: RGBA(0,0,0,.6);
+} 
+#container:hover .arrow
+{
+	display: block;
+} 
+#prev
+{
+	left: 25px;
+} 
+#next
+{
+	right: 25px;
+}
+
+
+</style>
+
+<script>
+
+window.onload=function () 
+{ 
+   var container=document.getElementById('container');
+   var list=document.getElementById('list'); 
+   var buttons=document.getElementById('buttons').getElementsByTagName('span'); 
+   var prev=document.getElementById('prev'); 
+   var next=document.getElementById('next');
+
+
+   var index=1;
+   var len=5;
+   var animated = false;
+   var interval = 3000;
+   var timer;
+function animate (offset) 
+{
+
+
+   animated=true;
+   var time=300;
+   var inteval=10;
+   var times=time/inteval;  
+   var speed = offset/times;  
+   var left= parseInt(list.style.left)+offset; 
+
+
+var go=function ()
+ { 
+ if ( (speed > 0 && parseInt(list.style.left) < left) (speed < 0 && parseInt(list.style.left) > left)) 
+ { list.style.left = parseInt(list.style.left) + speed + 'px';   
+  setTimeout(go, inteval);
+  }
+else 
+{ 
+list.style.left = left+ 'px';
+ if(left<-628*len)
+{ list.style.left="-400px"; } 
+if(left>-628)
+{ list.style.left=-628*len+"px"; 
+} 
+animated = false; 
+}
+ }
+go();
+}
+ 
+function showButton() 
+{  
+for (var i = 0; i < buttons.length ; i++) 
+{ 
+if( buttons[i].className == "on")
+{ 
+buttons[i].className = ''; 
+  break; 
+      }
+ } 
+
+
+buttons[index - 1].className = "on"; 
+} 
+ function play() 
+ {
+	 timer = setTimeout(function () 
+	 { 
+	 next.onclick(); 
+	 play(); 
+	 }, interval);
+	  }
+
+ function stp()
+  {
+	   clearTimeout(timer);
+	    }
+
+
+next.onclick = function () 
+{ 
+if (animated)
+ { 
+ return;
+  } 
+if(index==5)
+{ 
+index=1; 
+} 
+else{ index+=1; } 
+animate(-628); 
+showButton(); 
+}
+
+prev.onclick = function () 
+{ 
+if (animated) { return; } 
+if(index==1){ index=5; } else{ index-=1; } 
+animate(628); 
+showButton(); 
+}
+for (var i=0;i<buttons.length;i++)
+{
+	button[i].onclick=function()
+	{
+		if(animated)
+		{
+			return;
+		}
+		if(this.className=="on")
+		{
+			return;
+		}
+		var myIndex=parseInt(this.getAttribute('index'));
+		var offset=-628*(myIndex-index);
+		animate(offset);
+		index=myIndex;
+		showButton();
+	}
+}
+      container.onmouseover=stp;
+	  container.onmouseout=play;
+	  play();
+}
+
+</script>
+            
+</head>
+<body>
+  <div id="container">
+    <div id="list" >
+       <img src="images/5.png" alt="" />
+       <img src="images/1.png" alt="" />
+       <img src="images/2.png" alt="" />
+       <img src="images/3.png" alt="" />
+       <img src="images/4.png" alt="" />
+       <img src="images/5.png" alt="" />
+       <img src="images/1.png" alt="" />
+    </div>
+    <div id="buttons">
+       <span index='1' class="on"></span>
+       <span index='2'></span>
+       <span index='3'></span>
+       <span index='4'></span>
+       <span index='5'></span>
+    </div>
+    <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+    <a href="javascript:;" id="next" class="arrow">&gt;</a>
+  </div>
+</body>
+</html>

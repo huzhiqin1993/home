@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*
+{
+	margin:0;
+	padding:0;
+}
+#div1
+{
+	width:816px;
+	height:137px;
+	margin:200px auto;
+	position:relative;
+	overflow:hidden;
+	
+}
+#div1 ul
+{
+	position:absolute;
+	top:0;
+	left:0;
+}
+	
+#div1 ul li
+{
+	float:left;
+	list-style:none;
+	width:204px;
+	height:137px;
+}
+#a1
+{
+	height:80px;
+	width:80px;
+	opacity:0.3;
+	position:absolute;
+	top:30px;
+	left:0px;
+	cursor:pointer;
+	z-index:100;
+}
+#a2
+{
+	height:80px;
+	width:80px;
+	opacity:0.3;
+	position:absolute;
+	top:30px;
+	left:736px;
+	cursor:pointer;
+	z-index:100;
+}
+
+</style>
+<script>
+window.onload=function()
+{
+	var odiv=document.getElementById('div1');
+	var oul=document.getElementsByTagName('ul')[0];
+	var ali=oul.getElementsByTagName('li');
+	var speed=2;
+	
+	oul.innerHTML=oul.innerHTML+oul.innerHTML;
+	oul.style.width=ali[0].offsetWidth*ali.length+'px';
+	
+	function move(){
+		if(oul.offsetLeft<-oul.offsetWidth/2)
+		{
+			oul.style.left='0';
+		}
+		if(oul.offsetLeft>0)
+		{
+			oul.style.left=-oul.offsetWidth/2+'px';
+		}
+		oul.style.left=oul.offsetLeft+speed+'px';
+		
+	};
+	var timer=setInterval(move,30);
+	odiv.onmouseover=function()
+	{
+		clearInterval(timer);
+	}
+	odiv.onmouseout=function()
+	{
+		timer=setInterval(move,30);
+	}
+	document.getElementById('a2').onclick=function()
+	{
+		speed=2;
+	}
+	document.getElementById('a1').onclick=function()
+	{
+		speed=-2;
+	}
+};
+</script>
+
+</head>
+
+<body>
+
+<div id="div1">
+<span id="a1" href="#"><img src="image/left.png"/></span>
+<span id="a2" href="#"><img src="image/right.png"/></span>
+  <ul>
+    <li><img src="image/a.png"/></li>
+    <li><img src="image/b.png"/></li>
+    <li><img src="image/c.png"/></li>
+    <li><img src="image/d.png"/></li>
+  </ul>
+</div>
+</body>
+</html>

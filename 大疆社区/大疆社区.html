@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/index_sq.css"/>
+    <link href="js/mf-pattern/mF_classicHC.css" rel="stylesheet" type="text/css"/>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            $('.top_list').children('li').mouseenter(function(){
+
+                $(this).children('.sub-nav').addClass('dis')
+
+            })
+            $('.top_list').children('li').mouseleave(function(){
+
+                $(this).children('.sub-nav').removeClass('dis')
+
+            })
+            $('.qcode').mouseover(function(){
+                $('.erweima').slideDown()
+            })
+            $('.qcode').mouseout(function(){
+                $('.erweima').slideUp()
+            })
+
+//            $('i').children('.sub-nav').mouseenter(function(){
+//
+//                $(this).addClass('dis')
+//
+//            })
+//            $('i').children('.sub-nav').mouseleave(function(){
+//
+//                $(this).removeClass('dis')
+//
+//            })
+
+
+//            $('#list_lbt').children('li').css('background','url(images/sp_1.jpg)')
+
+//            $('.screen').mouseover(function(){
+//                $(this).children('#arr').css('opacity',.5)
+//            })
+//
+//            $('.screen').mouseout(function(){
+//                $(this).children('#arr').css('opacity',.1)
+//            })
+//            //设置点击小圆点事件
+//
+//            $('#lisOl').children('li').click(function(){
+//                var index = $(this).index()
+//                $('#lisOl').children('li').removeClass('current')
+//                $(this).addClass('current')
+//                $('#list_lbt').animate({
+//                    left:- index * 1200
+//                },1000)
+//            })
+
+
+//            $('#left').click(function(){
+//                var count = 0;
+//                count++
+//                $('#list_lbt').animate({
+//                    left:- count * 1200
+//                },1000)
+//
+//            })
+//            $('#right').click(function(){
+//                var count = 0;
+//                count--
+//                $('#list_lbt').animate({
+//                    left:- count * 1200
+//                },1000)
+//
+//            })
+
+        })
+    </script>
+</head>
+<body>
+<div id="nav">
+      <div class="nav-box">
+        <p class="logo">
+            <a href="javascript:;"><img src="images/logo_sq.png"></a>
+        </p>
+            <ul class="nav-menu clearfix unstyled">
+                <li><a href="#" class="three-d active">
+                    首页
+                    <span class="three-d-box"><span class="front">首页</span><span class="back">首页</span></span>
+                </a></li>
+                <li><a href="#" class="three-d">
+                    教程
+                    <span class="three-d-box"><span class="front">教程</span><span class="back">教程</span></span>
+                </a>
+
+                    <ul class="clearfix unstyled drop-menu">
+                        <li><a href="#" class="three-d">
+                                航拍教程
+                                <span class="three-d-box"><span class="front">航拍教程</span><span class="back">航拍教程</span></span>
+                            </a></li>
+                            <li><a href="#" class="three-d">
+                                后期教程
+                                <span class="three-d-box"><span class="front">后期教程</span><span class="back">后期教程</span></span>
+                            </a></li>
+                            <li><a href="#" class="three-d">
+                                飞行教程
+                                <span class="three-d-box"><span class="front">飞行教程</span><span class="back">飞行教程</span></span>
+                            </a></li>
+                            <li><a href="#" class="three-d">
+                                产品使用
+                                <span class="three-d-box"><span class="front">产品使用</span><span class="back">产品使用</span></span>
+                            </a></li>
+                            <li><a href="#" class="three-d">
+                                后期问答
+                                <span class="three-d-box"><span class="front">后期问答</span><span class="back">后期问答</span></span>
+                            </a></li>
+                    </ul>
+
+                </li>
+                <li><a href="#" class="three-d">
+                    作品
+                    <span class="three-d-box"><span class="front">作品</span><span class="back">作品</span></span>
+                </a>
+
+                    <ul class="clearfix unstyled drop-menu">
+                        <li><a href="#" class="three-d">
+                                自然
+                                <span class="three-d-box"><span class="front">自然</span><span class="back">自然</span></span>
+                            </a></li>
+                            <li><a href="#" class="three-d">
+                                建筑
+                                <span class="three-d-box"><span class="front">建筑</span><span class="back">建筑</span></span>
+                            </a></li>
+                            <li><a href="#" class="three-d">
+                                运动
+                                <span class="three-d-box"><span class="front">运动</span><span class="back">运动</span></span>
+                            </a></li>
+                            <li><a href="#" class="three-d">
+                                游记
+                                <span class="three-d-box"><span class="front">游记</span><span class="back">游记</span></span>
+                            </a></li>
+                    </ul>
+
+                </li>
+                <li><a href="#" class="three-d">
+                    产品
+                    <span class="three-d-box"><span class="front">产品</span><span class="back">产品</span></span>
+                </a>
+
+                    <ul class="clearfix unstyled drop-menu">
+                        <li><a href="#" class="three-d">
+                                御Mavic
+                                <span class="three-d-box"><span class="front">御Mavic</span><span class="back">御Mavic</span></span>
+                            </a></li>
+                            <li><a href="#" class="three-d">
+                                精灵系列
+                                <span class="three-d-box"><span class="front">精灵系列</span><span class="back">精灵系列</span></span>
+                            </a></li>
+                            <li><a href="#" class="three-d">
+                                悟系列
+                                <span class="three-d-box"><span class="front">悟系列</span><span class="back">悟系列</span></span>
+                            </a></li>
+                            <li><a href="#" class="three-d">
+                                Osmo系列
+                                <span class="three-d-box"><span class="front">Osmo系列</span><span class="back">Osmo系列</span></span>
+                            </a></li>
+                            <li><a href="#" class="three-d">
+                                App反馈
+                                <span class="three-d-box"><span class="front">App反馈</span><span class="back">App反馈</span></span>
+                            </a></li>
+                            <li><a href="#" class="three-d">
+                                影像系统
+                                <span class="three-d-box"><span class="front">影像系统</span><span class="back">影像系统</span></span>
+                            </a></li>
+                            <li><a href="#" class="three-d">
+                                行业应用
+                                <span class="three-d-box"><span class="front">行业应用</span><span class="back">行业应用</span></span>
+                            </a></li>
+                            <li><a href="#" class="three-d">
+                                农业植保机
+                                <span class="three-d-box"><span class="front">农业植保机</span><span class="back">农业植保机</span></span>
+                            </a></li>
+                    </ul>
+
+                </li>
+                <li><a href="#" class="three-d">
+                    活动
+                    <span class="three-d-box"><span class="front">活动</span><span class="back">活动</span></span>
+                </a>
+                    <ul class="clearfix unstyled drop-menu">
+                        <li><a href="#" class="three-d">
+                                约飞＋同城
+                                <span class="three-d-box"><span class="front">约飞＋同城</span><span class="back">约飞＋同城</span></span>
+                            </a></li>
+                            <li><a href="#" class="three-d">
+                                新手训练营
+                                <span class="three-d-box"><span class="front">新手训练营</span><span class="back">新手训练营</span></span>
+                            </a></li>
+                            <li><a href="#" class="three-d">
+                                影像沙龙
+                                <span class="three-d-box"><span class="front">影像沙龙</span><span class="back">影像沙龙</span></span>
+                            </a></li>
+                            <li><a href="#" class="three-d">
+                                官方活动
+                                <span class="three-d-box"><span class="front">官方活动</span><span class="back">官方活动</span></span>
+                            </a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="three-d">
+                    服务
+                    <span class="three-d-box"><span class="front">服务</span><span class="back">服务</span></span>
+                </a>
+                    <ul class="clearfix unstyled drop-menu">
+                        <li><a href="#" class="three-d">
+                                官方公告
+                                <span class="three-d-box"><span class="front">官方公告</span><span class="back">官方公告</span></span>
+                            </a></li>
+                            <li><a href="#" class="three-d">
+                                售前服务
+                                <span class="three-d-box"><span class="front">售前服务</span><span class="back">售前服务</span></span>
+                            </a></li>
+                            <li><a href="#" class="three-d">
+                                售后服务
+                                <span class="three-d-box"><span class="front">售后服务</span><span class="back">售后服务</span></span>
+                            </a></li>
+                            <li><a href="#" class="three-d">
+                                社区反馈
+                                <span class="three-d-box"><span class="front">社区反馈</span><span class="back">社区反馈</span></span>
+                            </a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="three-d">
+                    公测
+                    <span class="three-d-box"><span class="front">公测</span><span class="back">公测 </span></span>
+                </a>
+                    <ul class="clearfix unstyled drop-menu">
+                        <li><a href="#" class="three-d">
+                                公告区
+                                <span class="three-d-box"><span class="front">公告区</span><span class="back">公告区</span></span>
+                            </a></li>
+                            <li><a href="#" class="three-d">
+                                报告问题
+                                <span class="three-d-box"><span class="front">报告问题</span><span class="back">报告问题</span></span>
+                            </a></li>
+                            <li><a href="#" class="three-d">
+                                讨论区
+                                <span class="three-d-box"><span class="front">讨论区</span><span class="back">讨论区</span></span>
+                            </a></li>
+                        
+                    </ul>
+                </li>
+                
+             <div class="login">
+                <i class="iconfont">&#xe6a4;</i>
+                <span><img src="images/noavatar_small.gif"><a href="javascript:;">登录</a><a href="javascript:;">注册</a></span>
+             </div>
+
+            </ul>
+
+        </div>
+    </div>
+        <!-- <div style="width:100%;height:300px;background:red;"></div> -->
+
+         <div class="slide-box">
+            <div class="slide" id="picBox">
+              <div class="loading"><img src="images/loading.gif" alt="图片加载中..."/></div>
+              <div class="pic">
+                <ul>
+                  <li><img src="images/slide1.jpg"/></li>
+                  <li><img src="images/slide2.jpg"/></li>
+                  <li><img src="images/slide3.jpg"/></li>
+                  <li><img src="images/slide4.jpg"/></li>
+                  <li><img src="images/slide5.jpg"/></li>
+                  <li><img src="images/slide6.jpg"/></li>
+                  <li><img src="images/slide7.jpg"/></li>
+                  <li><img src="images/slide8.jpg"/></li>
+                </ul>
+                </div>
+              </div>
+
+          </div>
+
+<div class="content">
+    <div class="w">
+        <div class="contentL fl">
+            <div class="part0">
+            <div class="part0L"><img src="images/part0.jpg" alt=""/></div>
+            <div class="part0R">
+                <p class="p1">教程</p>
+                <p class="p2">你最想知道的十个《航拍中国》幕后问题都在这</p>
+                <p class="p3">哔哔姐与大家一起分享拍摄幕后的独家内容。</p>
+                <div class="rBotton">
+                    <span></span>
+                    <p>HeyDrones&nbsp;&nbsp;&nbsp;
+                        2 天前</p>
+                    <i></i>
+                    <p class="p4">1684</p>
+                    <b></b>
+                    <p class="p5">23</p>
+                </div>
+
+            </div>
+        </div>
+            <div class="part0">
+                <div class="part0L"><img src="images/zp1.jpg" alt=""/></div>
+                <div class="part0R">
+                    <p class="p1" style="background: #FF8080">作品</p>
+                    <p class="p2"> #视频# 浪在仙本那</p>
+                    <p class="p3">航拍设备：Phantom 4。</p>
+                    <div class="rBotton">
+                        <span style="background: url(images/tx2.jpg) no-repeat center" ></span>
+                        <p>平大诗
+                            &nbsp;&nbsp;&nbsp;
+                            2 天前</p>
+                        <i></i>
+                        <p class="p4">2282</p>
+                        <b></b>
+                        <p class="p5">33</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="part0">
+                <div class="part0L"><img src="images/jc1.jpg" alt=""/></div>
+                <div class="part0R">
+                    <p class="p1">教程</p>
+                    <p class="p2">导出、剪片调色、压缩...做个视频居然这么繁琐？</p>
+                    <p class="p3">DJI GO 4 不仅可编辑飞行器拍摄的素材，也可以导入手机拍摄的作品进行编辑制作。</p>
+                    <div class="rBotton">
+                        <span style="background: url(images/tx1.jpg) no-repeat center center"></span>
+                        <p>夏清&nbsp;&nbsp;&nbsp;
+                            3 天前</p>
+                        <i></i>
+                        <p class="p4">3724</p>
+                        <b></b>
+                        <p class="p5">37</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="part0">
+                <div class="part0L"><img src="images/zp2.jpg" alt=""/></div>
+                <div class="part0R">
+                    <p class="p1" style="background: #FF8080">作品</p>
+                    <p class="p2">#视频# 银河转日出延时摄影</p>
+                    <p class="p3">航拍设备：Inspire 1 RAW。</p>
+                    <div class="rBotton">
+                        <span style="background: url(images/zp2_small.jpg) no-repeat center" ></span>
+                        <p>梁伟冰
+                            &nbsp;&nbsp;&nbsp;
+                            3 天前</p>
+                        <i></i>
+                        <p class="p4">1246</p>
+                        <b></b>
+                        <p class="p5">13</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="part0">
+                <div class="part0L"><img src="images/zp3.jpg" alt=""/></div>
+                <div class="part0R">
+                    <p class="p1" style="background: #FF8080">作品</p>
+                    <p class="p2">#视频# 超越所见之西藏：珠峰24小时延时摄影</p>
+                    <p class="p3">单人一车自驾深入西藏腹地，拍摄 40000张照片，两个月时间后期制作。</p>
+                    <div class="rBotton">
+                        <span style="background: url(images/zp3_small.jpg) no-repeat center" ></span>
+                        <p>break
+                            &nbsp;&nbsp;&nbsp;
+                            3天前</p>
+                        <i></i>
+                        <p class="p4">7675</p>
+                        <b></b>
+                        <p class="p5">126</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="part0">
+                <div class="part0L"><img src="images/jc2.jpg" alt=""/></div>
+                <div class="part0R">
+                    <p class="p1">教程</p>
+                    <p class="p2">#飞手百科# 直线飞行与矩形飞行练习</p>
+                    <p class="p3">如果你已经掌握了直线飞行和矩形飞行的要点，不要得意，因为接下来还会有比较难的刷锅、圆航线、八字飞行等，这些都是新手应该掌握的飞行技巧。</p>
+                    <div class="rBotton">
+                        <span style="background: url(images/tx1.jpg) no-repeat center center"></span>
+                        <p>夏清&nbsp;&nbsp;&nbsp;
+                            4 天前</p>
+                        <i></i>
+                        <p class="p4">5721</p>
+                        <b></b>
+                        <p class="p5">48</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="part0">
+                <div class="part0L"><img src="images/zp4.jpg" alt=""/></div>
+                <div class="part0R">
+                    <p class="p1" style="background: #FF8080">作品</p>
+                    <p class="p2">#最美女飞手# XinYi，女飞手养成记</p>
+                    <p class="p3">几次拍摄下来，很快就掌握了小飞机基本的起降、移动和拍照。</p>
+                    <div class="rBotton">
+                        <span style="background: url(images/zp4_small.jpg) no-repeat center" ></span>
+                        <p>仁甲看见
+                            &nbsp;&nbsp;&nbsp;
+                            2017-3-31 23:57</p>
+                        <i></i>
+                        <p class="p4">4562</p>
+                        <b></b>
+                        <p class="p5">66</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="part0">
+                <div class="part0L"><img src="images/zp5.jpg" alt=""/></div>
+                <div class="part0R">
+                    <p class="p1" style="background: #FF8080">作品</p>
+                    <p class="p2">#视频# 梦中翱翔</p>
+                    <p class="p3">航拍国家森林公园巩乃斯/胡杨/霍拉山/莲花湖。</p>
+                    <div class="rBotton">
+                        <span style="background: url(images/zp5_small.jpg) no-repeat center" ></span>
+                        <p>dfhdgsgG
+                            &nbsp;&nbsp;&nbsp;
+                            2017-3-31 16:08</p>
+                        <i></i>
+                        <p class="p4">4254</p>
+                        <b></b>
+                        <p class="p5">103</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="part0">
+                <div class="part0L"><img src="images/zp6.jpg" alt=""/></div>
+                <div class="part0R">
+                    <p class="p1" style="background: #FF8080">作品</p>
+                    <p class="p2">#最美女飞手# 走进女护林员的世界</p>
+                    <p class="p3">绞尽脑汁想到一个令自己满意和希望对社会有点贡献的创意：一位美女护林工作员利用无
+                        <br/>人机对森林环境的巡查和保护。</p>
+                    <div class="rBotton">
+                        <span style="background: url(images/zp6_small.jpg) no-repeat center" ></span>
+                        <p>米加
+                            &nbsp;&nbsp;&nbsp;
+                            2017-3-31 19:03</p>
+                        <i></i>
+                        <p class="p4">6545</p>
+                        <b></b>
+                        <p class="p5">86</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="part0">
+                <div class="part0L"><img src="images/jc3.jpg" alt=""/></div>
+                <div class="part0R">
+                    <p class="p1">教程</p>
+                    <p class="p2">#干货# 极限运动怎么拍？</p>
+                    <p class="p3">航拍的高空视角能够拍摄广阔的画面，轻松展现出运动主体与环境的关系。</p>
+                    <div class="rBotton">
+                        <span></span>
+                        <p>HeyDrones&nbsp;&nbsp;&nbsp;
+                            2017-4-1 22:47</p>
+                        <i></i>
+                        <p class="p4">4555</p>
+                        <b></b>
+                        <p class="p5">57</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="part0">
+                <div class="part0L"><img src="images/zp7.jpg" alt=""/></div>
+                <div class="part0R">
+                    <p class="p1" style="background: #FF8080">作品</p>
+                    <p class="p2">#最美女飞手# 技术流妹子，精灵与城市规划的结合 </p>
+                    <p class="p3">我是一名城市规划师，在去年5月份购入大疆精灵3A后，我利用无人机的航拍在工作中 <br/>
+                        多次使用航拍技术，并帮助单位一个卡了两年多的老大难项目最终通过了专家评审。</p>
+                    <div class="rBotton">
+                        <span style="background: url(images/zp7_small.jpg) no-repeat center" ></span>
+                        <p>皮小酱_ASUKA
+                            &nbsp;&nbsp;&nbsp;
+                            2017-3-31 11:30</p>
+                        <i></i>
+                        <p class="p4">1254</p>
+                        <b></b>
+                        <p class="p5">13</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="part0">
+                <div class="part0L"><img src="images/zp8.jpg" alt=""/></div>
+                <div class="part0R">
+                    <p class="p1" style="background: #FF8080">作品</p>
+                    <p class="p2">#最美女飞手# 女摄影师小小，那些年一起飞过的流金岁月</p>
+                    <p class="p3">3年前接触无人机起，从此和他一起飞翔于天际。</p>
+                    <div class="rBotton">
+                        <span style="background: url(images/zp8_small.jpg) no-repeat center" ></span>
+                        <p>aomika
+                            &nbsp;&nbsp;&nbsp;
+                            2017-3-30 19:08</p>
+                        <i></i>
+                        <p class="p4">3321</p>
+                        <b></b>
+                        <p class="p5">36</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="gengduo">
+                <p><a href="javascript:;">加载更多</a></p>
+            </div>
+
+    </div>
+
+        <div class="contentR fr">
+            <div class="mengxiang">
+                <div class="top_mx"><img src="images/mengx.png" alt=""/></div>
+                <ul>
+                    <li><span></span>
+                    <p class="pp1"><a href="javascript:;">评测专家：<b>OsitaLV</b></a></p>
+                    <p class="pp2"><a href="javascript:;">作品：悟2 CinemaDNG使用感受</a></p>
+                    </li>
+                    <li><span></span>
+
+                        <p class="pp1"><a href="javascript:;">后期大牛：<b>UP!航拍团队</b></a></p>
+
+                        <p class="pp2"><a href="javascript:;">作品：SENSATION-年度航拍集锦</a></p>
+                    <li><span></span>
+
+                        <p class="pp1"><a href="javascript:;">城市达人：<b>犀利哟-Brian</b></a></p>
+
+                        <p class="pp2"><a href="javascript:;">作品：世界上离海最远的地方</a></p></li>
+                    <li><span></span>
+
+                        <p class="pp1"><a href="javascript:;">航拍导师：<b>HeyDrones</b></a></p>
+
+                        <p class="pp2"><a href="javascript:;">作品：无人机遥控实操技巧</a></p></li>
+                </ul>
+
+            </div>
+            <div class="huodong">
+                <div class="top_pic">
+                    <img src="images/hdpic.png" alt=""/>
+                </div>
+                <ul>
+                    <li class="meinv"><a href="javascript:;">
+                        寻找大疆#最美女飞手# ，赴云南自驾之旅</a><br/>
+                        时间：3月7号到3月31号</li>
+                    <li><a href="javascript:;">【投稿】梦想家召集令！想上首页不是梦</a></li>
+                    <li><a href="javascript:;">《焦点》四月刊征稿送杂志！</a></li>
+                    <li class="meile"><a href="javascript:;">2017大疆手持影像沙龙全新启航</a></li>
+                </ul>
+                <p><a href="javascript:;">点击展开更多</a></p>
+
+
+            </div>
+            <div class="reMengT">
+                <div class="rmtPic">
+                    <img src="images/rmtpic.png" alt=""/>
+                </div>
+                <ul>
+                    <li><a href="javascript:;"><span>教程</span><p>用Mavic拍出堪比Inspire的大片，其实你...</p></a></li>
+                    <li><a href="javascript:;"><span>教程</span><p>飞手百科：如何培养飞行中的方向感？</p></a></li>
+                    <li><a href="javascript:;"><span style="background: #FF8080">作品</span><p>#最美女飞手#+潇潇-驾精灵飞越活火山...</p></a></li>
+                    <li><a href="javascript:;"><span style="background: #FF8080">作品</span><p>#最美女飞手#极致·无边忌</p></a></li>
+                    <li><a href="javascript:;"><span style="background: #FF8080">作品</span><p>「超越所见西藏」</p></a></li>
+                    <li><a href="javascript:;"><span>教程</span><p>飞行安全的“十应十不”</p></a></li>
+                    <li><a href="javascript:;"><span>教程</span><p>【搞机日志二十四】航拍老司机是怎么炼...</p></a></li>
+                    <li><a href="javascript:;"><span>教程</span><p>航拍VR全景完美补天秘诀，前期拍摄是关...</p></a></li>
+                    <li><a href="javascript:;"><span style="background: #FF8080">作品</span><p>#最美女飞手# 女司机的进化论 从直升机...</p></a></li>
+                    <li class="quxiao"><a href="javascript:;"><span style="background: #FF8080">作品</span><p>飞跃沙巴州，爱在仙本娜</p></a></li>
+                </ul>
+                <p class="more"><a href="javascript:;">点击展开更多</a></p>
+            </div>
+            <div class="chuangmei">
+                <div class="cmPic">
+                    <img src="images/chuangmei.png" alt=""/>
+                </div>
+                <ul>
+                    <li class="lihai"><a href="javascript:;">使用最尖端飞行技术设备，提供最高品质的航拍影像</a></li>
+                    <li><a href="javascript:;">招聘 | 最厉害的那些航拍公司正在招人！</a></li>
+                    <li><a href="javascript:;">你和大师之间，只差一场特训</a></li>
+                    <li><a href="javascript:;">这两种运镜方式，让画面更丰满</a></li>
+                </ul>
+                <p class="more"><a href="javascript:;">查看此系列教程</a></p>
+            </div>
+
+        </div>
+
+    </div>
+    </div>
+
+
+<div class="bottom">
+    <div class="w">
+        <ul>
+            <li><a href="javascript:;">大疆官网</a></li>
+            <li><a href="javascript:;">大疆官方商城</a></li>
+            <li><a href="javascript:;">大疆直营店</a></li>
+            <li><a href="javascript:;">天猫官方旗舰店</a></li>
+            <li><a href="javascript:;">DJI＋约飞APP</a></li>
+            <li><a href="javascript:;">产品支持</a></li>
+            <li><a href="javascript:;">开发者论坛</a></li>
+            <li class="qcode"><a href="javascript:;">大疆社区手机版</a></li>
+        </ul>
+        <p>Copyright © 2016 大疆社区 版权所有 社区规则</p>
+
+        <span class="erweima"></span>
+
+    </div>
+
+
+
+</div>
+
+
+</body>
+
+<script src="js/myfocus-2.0.1.min.js" type="text/javascript"></script>
+<script src="js/mf-pattern/mF_classicHC.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        myFocus.set({id:"picBox"});
+    </script>
+</html>

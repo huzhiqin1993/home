@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>炫酷时钟</title>
+<style>
+*{
+	margin:0;
+	padding:0;
+}
+body
+{
+	background-color:#000;
+	font-size:100px;
+	color:#f0f0f0;
+	position:relative;
+}
+.clock
+{
+	width:800px;
+	height:75px;
+	line-height:75px;
+}
+
+.s1
+{
+	position:absolute;
+	top:15px;
+	left:155px;
+}
+.s2
+{
+	position:absolute;
+	top:15px;
+	left:350px;
+}
+</style>
+<script>
+function todou(n)
+{
+	if(n<10)
+	{
+		return '0'+n;
+		}
+	else
+	{
+		return ''+n;
+	}
+}
+window.onload=function()
+{
+	var aimg=document.getElementsByTagName('img');
+	
+	function tick(){
+	var odate=new Date();
+	var str=todou(odate.getHours())+todou(odate.getMinutes())+todou(odate.getSeconds());
+	for(var i=0;i<aimg.length;i++)
+	{
+		aimg[i].src='imgs/'+str.charAt(i)+'.png';
+	}
+	};
+	setInterval(tick,1000);
+	tick();
+};
+</script>
+</head>
+
+<body>
+<div  class="clock">
+<img src="imgs/0.png"/><img src="imgs/0.png"/>
+<span class="s1">:</span>
+<img src="imgs/0.png"/><img src="imgs/0.png"/>
+<span class="s2">:</span>
+<img src="imgs/0.png"/><img src="imgs/0.png"/>
+</div>
+</body>
+</html>

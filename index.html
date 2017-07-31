@@ -1,0 +1,955 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link rel="stylesheet" type="text/css" href="css/3dcss.css">
+<link rel="stylesheet" href="css/player.css">
+<style>
+*
+{
+	padding:0;
+	margin:0;
+	font-family:'微软雅黑';
+}
+body
+{
+	background-color: #f3f5f7;
+}
+a{
+	text-decoration: none;
+}
+
+ img
+{
+	border:none;
+}
+li
+{
+	list-style: none;
+}
+.clearfix:after {
+  content: "";
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+#header
+{
+	width: 100%;
+	height: 50px;
+	background-color: #2e323e;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+#header ul li
+{
+	line-height: 50px;
+	float: left;
+	margin-right: 40px;
+}
+#header ul li img
+{
+	height: 50px;
+	width: 100px;
+
+}
+#header ul li a
+{
+	text-decoration: none;
+	color: #fff;
+}
+#header ul li a:hover
+{
+	
+	color: yellow;
+}
+#header span
+{
+	float: right;
+	line-height: 50px;
+}
+#header span input
+{
+	float: left;
+	
+}
+#header span input[type="button"]
+{
+	height: 26px;
+	width: 40px;
+	margin-top: 13px;
+	background-color: #55b929;
+	border: none;
+	color: #fff;
+	margin-right: 20px;
+	
+}
+#header span input[type="text"]
+{
+	height: 22px;
+	width: 200px;
+	margin-top: 13px;
+	
+}
+#header span a
+{
+	text-decoration: none;
+	color: #fff;
+	margin-right: 20px;
+}
+#header span a:hover
+{
+	color: red;
+}
+#main
+{
+	width: 100%;
+	height: 1880px;
+}
+#main .slider
+{
+	margin-top: 10px;
+	
+	height: 380px;
+}
+#main .slider .slider-list
+{
+	margin-right: 20px;
+	width: 220px;
+	background-color: #666;
+	float: left;
+	height: 380px;
+}
+#main .slider .slider-list ul li
+{
+	height: 34px;
+	line-height: 34px;
+	text-align: left;
+	text-indent: 20px;
+
+
+}
+#main .slider .slider-list ul li:hover
+{
+	background-color: #999395;
+
+
+
+}
+#main .slider .slider-list ul li a
+{
+	color: #fff;
+	font-size: 20px;
+	font-family: "Times New Roman";
+	font-weight: 100;
+
+}
+#main .slider .slider-list ul li a:hover{
+	color: red;
+}
+#main .slider .slider-img
+{
+	
+	width: 860px;
+	background-color: orange;
+	float: right;
+    height: 380px;
+}
+#main .slider-img
+{
+	height: 380px;
+	width: 860px;
+	
+    overflow: hidden;
+	position: relative;
+
+}
+#main .slider-img ul
+{
+	height: 340px;
+	width: 4300px;
+	position: relative;
+
+}
+#main .slider-img ul li
+{
+	float: left;
+	
+}
+#main .slider-img .arrow
+{
+	
+	height: 60px;
+	width: 860px;
+	position: absolute;
+	top: 140px;
+	left: 0;
+    z-index: 1;
+    display: none;
+}
+#main .slider-img:hover .arrow
+{
+ display: block;
+}
+
+#main .slider-img .arrow div:hover 
+{
+ background-color:rgba(0,0,0,0.6);
+}
+#main .slider-img #arrow-left
+{
+	background-color:rgba(0,0,0,0.2);
+	height: 60px;
+	width: 40px;
+	text-align: center;
+	line-height: 60px;
+	float: left;
+	font-size: 28px;
+	color: #fff;
+	cursor: pointer;
+
+}
+#main .slider-img #arrow-right
+{
+	background-color:rgba(0,0,0,0.2);
+	height: 60px;
+	width: 40px;
+	text-align: center;
+	line-height: 60px;
+	float: right;
+	font-size: 28px;
+	color: #fff;
+	cursor: pointer;
+
+}
+
+#main .slider-img ol
+{
+	background-color: rgba(255,255,255,0.2);
+	height: 22px;
+	width: 125px;
+	position: absolute;
+	left: 50%;
+	margin-left: -62px;
+	bottom: 20px;
+	border-radius: 11px;
+	z-index: 99;
+
+}
+#main .slider-img ol li
+{
+	float: left;
+	height: 12px;
+	width: 12px;
+	border-radius: 6px;
+	margin-right: 9px;
+	margin-top: 5px;
+	background-color: #fff;
+	cursor: pointer;
+}
+#main .slider-img ol>:first-child
+{
+	margin-left: 13px;
+}
+
+#main .slider-img ol .active
+{
+	background-color: red;
+}
+
+.center
+{
+	width: 1100px;
+    margin:0 auto;
+}
+#main .course ul 
+{
+   height: 220px;
+}
+#main .course ul li 
+{
+	
+	width:244px;
+	height:171px;
+	position:relative;
+	float: left;
+	margin-right: 40px;
+	box-shadow:2px 2px 8px #ccc;	
+}
+#main .course ul h3
+{
+	margin-bottom: 15px;
+	margin-top: 20px;
+	font-size: 22px;
+	font-weight: 200;
+}
+#main .course ul li:last-child
+{
+	
+  margin-right: 0px;
+}
+#main .course ul li .slidbox
+{
+	width:100%;
+	height:45px;
+	position:absolute;
+	left:0;
+	bottom:0px;
+	background-color:#fff;
+	opacity:0.9;
+	filter:alpha(opacity=90);
+	overflow:hidden;
+	transition:height .5s;
+	cursor:pointer;
+	
+}
+#main .course ul li .slidbox h4
+{
+	margin-top:20px;
+	margin-bottom:25px;
+	font-weight:normal;
+	line-height: 10px;
+	text-align: center;
+}
+#main .course ul li .slidbox p
+{
+	color:#666;
+	margin: -10px 15px 0px 15px;
+	
+	font-size:14px;
+	font-family:"微软雅黑";
+}
+#main .course ul li:hover .slidbox
+{
+	height:100px;
+}
+#main .course ul li:hover
+{
+	box-shadow:0px 0px 10px #333;
+}
+
+#main .course .shiyong  li a,#main .course .xuanku  li a,#main .course .game  li a
+{
+	display: inline-block;
+	width:244px;
+	height:171px;	
+}
+#main .course .shiyong  li a span,#main .course .xuanku  li a span,#main .course .game  li a span
+{
+	display: inline-block;
+	margin: 20px 20px 0 20px;
+	color: #000;
+
+}
+#main .course .shiyong  li a
+{
+	background-color: #fbb8ac;
+}
+#main .course .xuanku  li a
+{
+	background-color: #acf6ef;
+}
+#main .course .game li a
+{
+	background-color: #e3c887;
+}
+#main .course .shiyong  li ,#main .course .xuanku  li,#main .course .game  li
+{
+	border-radius: 5px 5px 0 0;
+	overflow: hidden;
+
+	
+}
+#main .course .shiyong  li p,#main .course .xuanku  li p,#main .course .game  li p
+{
+	line-height: 44px;
+	width:244px;
+	height:44px;
+	text-align: left;
+	text-indent: 20px;
+	color: #fff;	
+}
+
+#main .course .shiyong  li p
+{
+	background-color: #fe6673;
+}
+#main .course .xuanku  li p
+{
+	background-color: #2ae0c8;	
+}
+#main .course .game  li p
+{
+	background-color: #ee8c01;	
+}
+
+#footer p
+{
+ text-align: center;
+ margin-top: 10px;
+ font-size: 14px;
+ color: #333;
+}
+#footer .first
+{
+ 
+ margin:15px 0px;
+
+}
+#footer .first a:hover
+{
+ 
+color: red;
+
+}
+#footer p a
+{
+ margin: 0 5px;
+ color: #666;
+ font-size: 15px
+}
+#main .data 
+{
+	margin-top: 20px;
+}
+#main .data img
+{
+	
+	margin-top: 20px;
+}
+#main .data .data-left
+{
+	float: left;
+	margin-right: 40px;
+	width: 528px;
+	height: 300px;
+	border: 1px solid #f3f5f7;
+}
+#main .data .data-right
+{
+	float: right;
+	
+	width: 528px;
+	height: 300px;
+	border: 1px solid #f3f5f7;
+}
+#main .data .data-left ul,#main .data .data-right ul
+{
+	height: 180px;
+	background-color: #fff;
+	padding-top: 10px;
+	box-shadow: 0px 4px 2px #666;
+}
+#main .data .data-left ul li,#main .data .data-right ul li 
+{
+	text-indent: 20px;
+	margin-bottom: 8px;
+}
+
+#main .data .data-left ul li a,#main .data .data-right ul li a
+{
+	color: #333;
+	text-decoration: none;
+	font-size: 15px;
+
+}
+#main .data .data-left ul li a:hover,#main .data .data-right ul li a:hover
+{
+	color: red;
+	
+}
+</style>
+</head>
+
+<body>
+<div id="header">
+	<div class="center">
+		<ul>
+		    <li><a href="javascript:;"><img src="img/timg1.jpg"/></a></li>
+			<li><a href="javascript:;">前端开发</a></li>
+			
+			<li><a href="javascript:;">移动开发</a></li>
+			<li><a href="javascript:;">数据库</a></li>
+			<li><a href="javascript:;">UI设计</a></li>
+		</ul>
+		<span><input type="text" placeholder="搜索感兴趣的特效" /><input value="搜索" type="button"/>
+		<a href="javascript:;">登录</a><a href="javascript:;">注册</a></span>
+	</div>
+</div>
+
+
+<div id="nav">
+	<div class="center">
+			<ul class="nav-menu clearfix unstyled">
+				<li><a href="#" class="three-d active">
+					Home
+					<span class="three-d-box"><span class="front">Home</span><span class="back">Home</span></span>
+				</a></li>
+				<li><a href="#" class="three-d">
+					Services
+					<span class="three-d-box"><span class="front">Services</span><span class="back">Services</span></span>
+				</a></li>
+				<li><a href="#" class="three-d">
+					Products
+					<span class="three-d-box"><span class="front">Products</span><span class="back">Products</span></span>
+				</a></li>
+				
+				<li><a href="#" class="three-d">
+					About
+					<span class="three-d-box"><span class="front">About</span><span class="back">About</span></span>
+				</a></li>
+			
+				<li><a href="#" class="three-d">
+					 Joint
+					<span class="three-d-box"><span class="front">Joint</span><span class="back">Joint</span></span>
+				</a></li>
+				<li><a href="#" class="three-d">
+					Contact
+					<span class="three-d-box"><span class="front">Contact</span><span class="back">Contact</span></span>
+				</a></li>
+				<li><a href="#" class="three-d">
+					Webfront
+					<span class="three-d-box"><span class="front">Webfront</span><span class="back">Webfront</span></span>
+				</a>
+					
+				</li>
+				<li><a href="#" class="three-d">
+					 On-line
+					<span class="three-d-box"><span class="front">On-line</span><span class="back">On-line</span></span>
+				</a></li>
+			</ul>
+		</div>
+	</div>
+
+<div id="main">
+
+<div class="center">
+	<div class="slider">
+		<div class="slider-list ">
+			<ul>
+				<li><a href="javascript:;">HTML/CSS</a></li>
+				<li><a href="javascript:;">JavaScript</a></li>
+				<li><a href="javascript:;">Html5/CSS3</a></li>
+				<li><a href="javascript:;">jQuery</a></li>
+				<li><a href="javascript:;">Node.js</a></li>
+				<li><a href="javascript:;">AngularJS</a></li>
+				<li><a href="javascript:;">Bootstrap</a></li>
+				<li><a href="javascript:;">React.JS</a></li>
+				<li><a href="javascript:;">Vue.js</a></li>
+				<li><a href="javascript:;">Sass/Less</a></li>
+				<li><a href="javascript:;">WebApp</a></li>
+
+			</ul>
+		</div>
+		<div class="slider-img">
+		<div id="slide">
+			 <ul>
+			 	<li><a href="浪漫表白.html"><img src="img/love.jpg"/></a></li>
+			 	<li><a href="浪漫表白.html"><img src="img/timg8.jpg"/></a></li>
+			      
+			 	<li><a href="贪吃蛇.html"><img src="img/timg10.jpg"/></a></li>
+			 	<li><a href="2048小游戏.html"><img src="img/timg7.jpg"/></a></li>
+			 	<li><a href="飞机大战.html"><img src="img/timg6.jpg"/></a></li>
+			     
+			 
+			    </ul>			  
+                <div class="arrow">
+                	<div id="arrow-left">&lt;</div>
+                	<div id="arrow-right">&gt;</div>
+                </div>
+                <ol>
+                	<li class="active"></li>
+                	<li></li>
+                	<li></li>
+                	<li></li>
+                	<li></li>
+                	
+                </ol>
+            </div>
+		</div>
+	</div>
+</div>
+
+ <div class="center course">
+  <ul>
+  	<h3>版主推荐</h3>
+    <li>
+  <a href="飞机大战.html"><img src="img/timg11.jpg" alt=""/></a>
+  <div onclick=toplant() class="slidbox"><h4>微信飞机大战</h4><p>曾经在微信端火爆一时的小游戏，来一场痛快的厮杀吧！</p></div>
+    </li>
+    <li>
+  <a href="贪吃蛇.html"><img src="img/timg12.jpg" alt=""/></a>
+  <div onclick=tosnake() class="slidbox"><h4>js贪吃蛇小游戏</h4><p>经典贪吃蛇小游戏，是否让你想起儿时玩过的那款贪吃蛇游戏。</p></div>
+    </li>
+    <li>
+  <a href="浪漫表白.html"><img src="img/timg13.jpg" alt=""/></a>
+  <div onclick=tobiaobai() class="slidbox"><h4>浪漫表白特效</h4><p>超炫表白特效，用这个页面去向你的女神表白吧！(注意有音乐)</p></div>
+    </li>
+    <li>
+  <a href="2048小游戏.html"><img src="img/timg14.png" alt=""/></a>
+  <div onclick=to2048() class="slidbox"><h4>2048小游戏</h4><p>休闲益智小游戏，玩到2048有奖励哦！</p></div>
+    </li>
+
+  </ul>
+ 
+  <ul class="shiyong">
+  	<h3>实用特效(找图片实在太麻烦了，大家将就着看吧)</h3>
+    <li>
+    	<a href="css3翘边阴影.html"><p>css3翘边阴影</p><span>用css3让图片呈现出翘边的效果</span></a>
+    </li>
+    <li>
+        <a href="放大镜特效.html"><p>js放大镜特效</p><span>慕课网上的一个栗子，实现购物网站常用的放大镜特效</span></a>
+    </li>
+    <li>
+       <a href="旋转木马/旋转木马.html"><p>js“旋转木马”轮播图</p><span>JS实现“旋转木马”幻灯片效果</span></a>
+    </li>
+    <li>
+       <a href="waterfall/index.html"><p>js瀑布流布局</p><span>瀑布流布局是网站比较流行的一种布局方式</span></a>
+    </li>
+
+  </ul>
+
+  <ul class="xuanku">
+  	<h3>炫酷特效</h3>
+    <li>
+    	<a href="逼真的蜘蛛.html"><p>js会动的蜘蛛</p><span>用js做的一只蜘蛛，非常逼真，胆小勿入(可拖动)</span></a>
+    </li>
+    <li>
+        <a href="js3d玫瑰.html"><p>js3D玫瑰</p><span>用纯js实现的动态呈现的3d玫瑰</span></a>
+    </li>
+    <li>
+       <a href="css3模仿篮球运动.html"><p>css3模仿篮球运动</p><span>用纯css实现的人物模仿打篮球运动</span></a>
+    </li>
+    <li>
+       <a href="OSChina 2012大记事3.htm"><p>OSC-开源中国时间轴</p><span>开源中国年会活动时间轴，是不是很酷炫</span></a>
+    </li>
+
+  </ul>
+  <ul class="xuanku" style="margin-top:20px">
+  
+    <li>
+    	<a href="吐了别怪我.html"><p>吐了别怪我</p><span>让人眩晕、恶心的动态图片特效，胃不好的慎入！</span></a>
+    </li>
+    <li>
+        <a href="canvas酷炫倒计时/canvas-course/index.html"><p>canvas酷炫倒计时</p><span>慕课网上的一个栗子，基于canvas实现的酷炫倒计时效果</span></a>
+    </li>
+    <li>
+       <a href="球面滚动效果.html"><p>球面滚动效果</p><span>js实现的立体球面效果</span></a>
+    </li>
+    <li>
+       <a href="canvas粒子特效.html"><p>canvas粒子特效</p><span>canvas实现的碰撞粒子特效，鼠标停留在屏幕上可将粒子聚合</span></a>
+    </li>
+
+  </ul>
+  <ul class="game" style="margin-top:-40px">
+  	<h3>其他相关</h3>
+    <li>
+    	<a href="坦克大战/index.html"><p>坦克大战</p><span>经典游戏坦克大战</span></a>
+    </li>
+    <li>
+        <a href="http://192.168.37.79/d3js/fanyi.html"><p>英汉、汉英词典</p><span>英文不认识，中文不知道如何翻译成英文，试试这个吧！</span></a>
+    </li>
+    <li>
+       <a href="http://192.168.37.79"><p>我的京东</p><span>这里打个广告，展示一下我做的京东首页</span></a>
+    </li>
+    <li>
+       <a href="46种插件(啥都有)/My-library/index.html"><p>实用特效集锦</p><span>点开这里将会是一片新的天地，里面有54种特效合集</span></a>
+    </li>
+
+  </ul>
+  </div>
+  
+
+  <div class="data">
+  <div class="center">
+  	<div class="data-left">
+  	    <h3>资讯推荐</h3>
+  	    <img src="img/timg15.jpg"/>
+  	    <ul>
+  	    	
+        	<li><a href="web前端优化方式总结.html">1、web前端优化方式总结</a></li>
+        	<li><a href="JavaScript基本语法.html">2、JavaScript基本语法</a></li>
+        	<li><a href="数组去重的5种方法.html">3、数组去重的5种方式</a></li>
+        	<li><a href="数组去重的5种方法.html">4、数组去重的5种方式</a></li>
+        	<li><a href="数组去重的5种方法.html">5、数组去重的5种方式</a></li>
+        	<li><a href="数组去重的5种方法.html">6、数组去重的5种方式</a></li>
+        	
+        </ul>
+  	</div>
+  	<div class="data-right">
+  	  <h3>下载专区</h3>
+     	<img src="img/timg16.jpg"/>
+        <ul>
+        	
+        	<li><a href="响应式WEB设计-HTML5与CSS3实战.pdf">1、响应式WEB设计-HTML5与CSS3实战</a></li>
+        	<li><a href="bootstrap/Bootstrap3.2.0中文文档.rar">2、bootstrap3.2离线文档下载</a></li>
+        	<li><a href="bootstrap/Bootstrap3.2.0中文文档.rar">3、bootstrap3.2离线文档下载</a></li>
+        	<li><a href="bootstrap/animate.css – 齐全的CSS3动画库.zip">4、animate.css – 齐全的CSS3动画库下载</a></li>
+        	<li><a href="bootstrap/fullPage.js-master.zip">5、fullPage.js-master下载</a></li>
+        	<li><a href="百度、淘宝、网易、搜狐前端开发面试题集锦.pdf">6、百度、淘宝、网易、搜狐前端开发面试题集锦下载</a></li>
+        	
+        </ul>
+  	</div>
+  </div>
+  </div>
+  
+ </div>
+
+ <div id="footer">
+	<div class="center">
+        	<p class="first">
+        		<a href="javascript:;">关于我们</a>|
+        		<a href="javascript:;">联系我们</a>|
+        		<a href="javascript:;">联系客服</a>|
+        		<a href="javascript:;">合作招商</a>|
+        		<a href="javascript:;">营销中心</a>|       		
+        		<a href="javascript:;">友情链接</a>|       		      		
+        		<a href="javascript:;">English Site</a>|
+        		<a href="javascript:;">Contact Us</a>
+        	</p>
+        
+			<p>Copyright © 2004 - 2017  Web Front-End.com 版权所有</p>
+			
+        </div>
+    </div>
+
+
+<div id="QPlayer">
+<div id="pContent">
+	<div id="player">
+		<span class="cover"></span>
+		<div class="ctrl">
+			<div class="musicTag marquee">
+				<strong>Title</strong>
+				 <span> - </span>
+				<span class="artist">Artist</span>
+			</div>
+			<div class="progress">
+				<div class="timer left">0:00</div>
+				<div class="contr">
+					<div class="rewind icon"></div>
+					<div class="playback icon"></div>
+					<div class="fastforward icon"></div>
+				</div>
+				<div class="right">
+					<div class="liebiao icon"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="ssBtn">
+	        <div class="adf"></div>
+    </div>
+</div>
+<ol id="playlist"></ol>
+</div>
+
+
+
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+
+<script src="js/jquery.marquee.min.js"></script>
+
+<script type="text/javascript">
+
+function toplant()
+{
+	window.location.href="飞机大战.html";
+}
+function tosnake()
+{
+	window.location.href="贪吃蛇.html";
+}
+function tobiaobai()
+{
+	window.location.href="浪漫表白.html";
+}
+function to2048()
+{
+	window.location.href="2048小游戏.html";
+}
+
+
+var odiv=document.getElementById("slide");
+var oleft=document.getElementById("arrow-left");
+var oright=document.getElementById("arrow-right");
+var oul=odiv.getElementsByTagName("ul")[0];
+var abtn=odiv.getElementsByTagName('ol')[0].getElementsByTagName('li');
+var now=0;
+		
+	for(var i=0;i<abtn.length;i++)
+	{
+		abtn[i].index=i;
+		abtn[i].onclick=function()
+		{
+			now=this.index;
+			tab();
+			}
+		
+		}
+   function tab()
+   {
+	   for(var i=0;i<abtn.length;i++)
+			{
+			abtn[i].className="";
+			}
+			abtn[now].className='active';
+			startMove(oul,{left:-860*now});
+   }
+  
+  function next()
+  {
+	  now++;
+	  if(now==abtn.length)
+	  {
+		  now=0;
+	  }
+	  tab();
+  }
+
+  function pre()
+  {
+  	if(now==0)
+	  {
+		  now=abtn.length;
+	  }
+	  now--;
+	  tab();
+  }
+
+  var timer=setInterval(next,3000);
+
+  oleft.onclick=function()
+		{
+			tab();
+		    next();
+		}
+
+  oright.onclick=function()
+		{
+			tab();
+			pre();				
+		} 
+
+  odiv.onmouseover=function()
+  {
+	  clearInterval(timer);
+  }
+  odiv.onmouseout=function()
+  {
+	  timer=setInterval(next,3000);
+  }
+
+//setInterval(startMove(Oul,{left:-740}), 1000);
+
+function startMove(obj,json,fn){
+ clearInterval(obj.timer)
+ obj.timer=setInterval(function(){
+ var flag=true;	 
+ for(var attr in json)
+ { 
+//1.获取当前值
+ var icur=0;
+  if(attr=='opacity'){
+  icur=parseFloat(getStyle(obj,attr))*100
+  }else{
+  icur=Math.round(parseInt(getStyle(obj,attr)))
+  }
+//2.算速度     var icur=parseInt(getStyle(obj,attr))
+ var speed=(json[attr]-icur)/5;
+ speed=speed>0?Math.ceil(speed):Math.floor(speed)
+//检测停止 
+  if(icur!=json[attr]){
+   flag=false;
+  }
+   if(attr=='opacity'){
+   obj.style['opacity']=(icur+speed)/100;
+   obj.style.filter='alpha(opacity:'+(icur+speed)+')';   
+   }else{
+   obj.style[attr]=icur+speed+'px'
+   }
+  }
+   if(flag){
+   clearInterval(obj.timer)
+     if(fn){
+	 fn();	 
+	 }   
+   }  
+ },30)
+}
+
+//获取css样式
+function getStyle(obj,attr){
+ if(obj.currentStyle){
+ return obj.currentStyle[attr];
+ }else{
+ return getComputedStyle(obj,false)[attr];
+ }
+}
+
+
+
+	var	playlist = [
+
+{title:"울컥",artist:"Krystal",mp3:"music/Krystal - 呜咽.mp3",cover:"imgs/xieanqi2.png",},
+
+{title:"天若有情",artist:"A-Lin",mp3:"music/A-Lin+-+天若有情.mp3",cover:"imgs/Alin.png",},
+
+{title:"喜欢你",artist:"G.E.M.邓紫棋",mp3:"music/G.E.M.邓紫棋 - 喜欢你.mp3",cover:"imgs/xieanqi2.png",},
+
+{title:"多远都要在一起",artist:"G.E.M.邓紫棋",mp3:"music/G.E.M.邓紫棋 - 多远都要在一起.mp3",cover:"imgs/xieanqi2.png",},
+{title:"情人",artist:"G.E.M.邓紫棋",mp3:"music/G.E.M.邓紫棋 - 情人.mp3",cover:"imgs/xieanqi2.png",},
+
+{title:"나의 옛날이야기",artist:"IU",mp3:"music/IU - 나의 옛날이야기.mp3",cover:"imgs/xieanqi2.png",},
+
+{title:"怎么唱情歌",artist:"刘惜君",mp3:"music/刘惜君 - 怎么唱情歌.mp3",cover:"imgs/xieanqi2.png",},
+
+{title:"走着走着就散了",artist:"庄心妍",mp3:"music/庄心妍 - 走着走着就散了.mp3",cover:"imgs/xieanqi2.png",},
+
+{title:"哭砂",artist:"张惠妹",mp3:"music/张惠妹+-+哭砂.mp3",cover:"imgs/xieanqi2.png",},
+
+{title:"谁明浪子心",artist:"王杰",mp3:"music/王杰 - 谁明浪子心.mp3",cover:"imgs/xieanqi2.png",},
+
+{title:"清风徐来",artist:"王菲",mp3:"music/王菲 - 清风徐来.mp3",cover:"imgs/xieanqi.png",},
+
+{title:"喜帖街",artist:"谢安琪",mp3:"music/谢安琪 - 喜帖街.mp3",cover:"imgs/xieanqi.png",},
+
+{title:"最佳损友",artist:"谢安琪",mp3:"music/谢安琪 - 最佳损友.mp3",cover:"imgs/xieanqi.png",},
+
+{title:"我们都被忘了",artist:"谢安琪",mp3:"music/谢安琪+-+我们都被忘了.mp3",cover:"imgs/xieanqi.png",},
+
+{title:"钟无艳",artist:"谢安琪",mp3:"music/谢安琪+-+钟无艳.mp3",cover:"imgs/xieanqi.png",},
+
+{title:"我的秘密",artist:"邓紫棋",mp3:"music/邓紫棋 - 我的秘密.mp3",cover:"imgs/xieanqi2.png",},
+
+{title:"天行九歌",artist:"霍尊",mp3:"music/霍尊 - 天行九歌.mp3",cover:"imgs/huozun.png",},
+
+{title:"新鸳鸯蝴蝶梦",artist:"黄安",mp3:"music/黄安 - 新鸳鸯蝴蝶梦.mp3",cover:"imgs/xieanqi2.png",}
+];
+  var isRotate = true;
+  var autoplay = false;
+
+
+</script>
+
+<script src="js/player.js"></script>
+<script>
+
+function bgChange(){
+	var lis= $('.lib');
+	for(var i=0; i<lis.length; i+=2)
+	lis[i].style.background = 'rgba(246, 246, 246, 0.5)';
+}
+window.onload = bgChange;
+</script>
+
+</html>

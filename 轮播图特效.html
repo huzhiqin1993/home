@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>轮播图特效</title>
+<style>
+*{
+	margin:0;
+	padding:0;
+}
+#container{
+	height:210px;
+	width:650px;
+	margin:0 auto;
+	position:relative;
+	overflow:hidden;
+}
+#container ul{
+	position:absolute;
+}
+
+#container ul li{
+	list-style:none;
+}#container ol li{
+	list-style:none;
+	float:left;
+	height:20px;
+	width:20px;
+	background-color:#F9C;
+	margin-left:10px;
+	text-align:center;
+	cursor:pointer;
+	border:1px solid #F06;
+}
+#container ol {
+	position:absolute;
+	bottom:15px;
+	right:20px;
+	z-index:500;
+}
+#container ol .active{
+	background-color:#C09;
+}
+</style>
+<script>
+window.onload=function()
+{
+	var odiv=document.getElementById('container');
+	var abtn=odiv.getElementsByTagName('ol')[0].getElementsByTagName('li');
+	var oul=odiv.getElementsByTagName('ul')[0];
+	var now=0;
+	for(var i=0;i<abtn.length;i++)
+	{
+		abtn[i].index=i;
+		abtn[i].onclick=function()
+		{
+			now=this.index;
+			tab();
+			}
+		
+		}
+		function tab()
+   {
+	   for(var i=0;i<abtn.length;i++)
+			{
+			abtn[i].className="";
+			}
+			abtn[now].className='active';
+			startMove(oul,{top:-210*now});
+   }
+  function next()
+  {
+	  now++;
+	  if(now==abtn.length)
+	  {
+		  now=0;
+	  }
+	  tab();
+  }
+  var timer=setInterval(next,2000);
+  odiv.onmouseover=function()
+  {
+	  clearInterval(timer);
+  }
+  odiv.onmouseout=function()
+  {
+	  timer=setInterval(next,2000);
+  }
+}
+	
+   
+function getStyle(obj,attr){
+		if(obj.currentStyle){
+			return obj.currentStyle[attr];
+			}
+			else{
+			return getComputedStyle(obj,false)[attr];
+				}
+		}
+var alpha=30;
+function startMove(obj,json,fn){
+	var flag=true;
+	clearInterval(obj.timer);
+	obj.timer=setInterval(function(){
+		for(var attr in json)
+	{
+		var icur=0;
+		if(attr=='opacity'){
+			icur=Math.round(parseFloat(getStyle(obj,attr))*100);
+			}
+			else{
+			icur=parseInt(getStyle(obj,attr));
+				}
+		var speed=(json[attr]-icur)/8;
+		speed=speed>0?Math.ceil(speed):Math.floor(speed);
+		if(icur!=json[attr]){
+			flag=false;
+		}
+		            if(attr=='opacity'){
+					obj.style.filter='alpha(opacity:'+(icur+speed)+')';
+					obj.style.opacity=(icur+speed)/100;
+					}
+					else{
+			        obj.style[attr]=icur+speed+'px';
+					}
+		}
+	    if(flag)
+		{
+			clearInterval(obj.timer);
+			if(fn)
+			{
+				fn();
+				}
+			}
+		},30)
+	}
+</script>
+</head>
+<body>
+<div id="container">
+  <ol style="-moz-user-select:-moz-none;"  onselectstart="return false;">
+    <li class="active">1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ol>
+      <ul>
+        <li><img src="img/img1.png"/></li>
+        <li><img src="img/img2.png"/></li>
+        <li><img src="img/img3.png"/></li>
+        <li><img src="img/img4.png"/></li>
+        <li><img src="img/img5.png"/></li>
+      </ul>
+</div>
+</body>
+</html>

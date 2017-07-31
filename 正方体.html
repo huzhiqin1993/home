@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+            html, body{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+        #container {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+
+        .face {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            transform-origin: 50% 50% 50px;
+            backface-visibility:hidden;
+        }
+
+        #front {
+            background-color: #ff9000;
+            transform: rotateX(0deg);
+        }
+
+        #back {
+            background-color: #2595e5;
+            transform: rotateY(180deg);
+        }
+
+        #left {
+            background-color: #b2e281;
+            transform: rotateY(90deg);
+        }
+
+        #right {
+            background-color: #f00e5a;
+            transform: rotateY(270deg);
+        }
+        #top {
+            background-color: #0ff;
+            transform: rotateX(270deg);
+        }
+        #bottom {
+            background-color: #ff0;
+            transform: rotateX(90deg);
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="left" class="face"></div>
+    <div id="back" class="face"></div>
+    <div id="right" class="face"></div>
+    <div id="front" class="face"></div>
+    <div id="top" class="face"></div>
+    <div id="bottom" class="face"></div>
+</div>
+<script>
+    window.onload = function () {
+        var eFront = document.getElementById("front");
+        var eBack = document.getElementById("back");
+        var eLeft = document.getElementById("left");
+        var eRight = document.getElementById("right");
+        var eTop = document.getElementById("top");
+        var eBottom = document.getElementById("bottom");
+        var deg = 0;
+
+        function Face(ele, degX, degY, degZ){
+            this.ele = ele;
+            this.degX = degX;
+            this.degY = degY;
+            this.degZ = degZ;
+        }
+        Face.prototype.rotate = function(cX, cY, cZ){
+            this.degX = (this.degX + cX) % 360;
+            this.degY = (this.degY + cY) % 360;
+            this.degZ = (this.degZ + cZ) % 360;
+            this.ele.style.transform = "rotateX(" + this.degX + "deg) rotateY(" + this.degY +"deg) rotateZ(" + this.degZ + "deg)";
+        };
+
+        function Cube(front, left, back, right, top, bottom){
+            this.front = front;
+            this.left = left;
+            this.back = back;
+            this.right = right;
+            this.top = top;
+            this.bottom = bottom;
+        }
+        Cube.prototype.rotate = function(cX, cY, cZ){
+            this.rotateX(cX);
+            this.rotateY(cY);
+        };
+        Cube.prototype.rotateX = function(cX){
+            [this.front, this.top, this.back, this.bottom, this.left, this.right].forEach(function(item){
+                item.rotate(cX, 0, 0);
+            });
+        };
+        Cube.prototype.rotateY = function(cY){
+            [this.front, this.left, this.back, this.right].forEach(function(item){
+                item.rotate(0, cY, 0);
+            });
+            this.top.rotate(0, 0, -cY);
+            this.bottom.rotate(0, 0, cY);
+        };
+
+        var left = new Face(eLeft, 0, 90, 0);
+        var back = new Face(eBack, 0, 180, 0);
+        var right = new Face(eRight, 0, 270, 0);
+        var front = new Face(eFront, 0, 0, 0);
+        var top = new Face(eTop, 90, 0, 0);
+        var bottom = new Face(eBottom, 270, 0, 0);
+        var cube = new Cube(front, left, back, right, top, bottom);
+
+        var startX, startY, flag = false;
+        document.addEventListener("mousedown", function(e){
+            startX = e.pageX;
+            startY = e.pageY;
+            flag = true;
+            document.body.style.cursor = "pointer";
+        });
+        document.addEventListener("mousemove", function(e){
+            if(flag){
+                var moveX =  startX - e.pageX;
+                var moveY = startY - e.pageY;
+                cube.rotate(-moveY / 100, moveX / 100, 0);
+            }
+        });
+        document.addEventListener("mouseup", function(e){
+            startX = e.pageX;
+            startY = e.pageY;
+            flag = false;
+            document.body.style.cursor = "default"
+        });
+    }
+</script>
+</body>
+</html>

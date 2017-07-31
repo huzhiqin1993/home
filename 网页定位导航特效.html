@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>网页定位导航</title>
+<style>
+*
+{
+	margin:0;
+	padding:0;
+}
+li
+{
+	list-style-type:none;
+}
+#content
+{
+	width:820px;
+	margin:0 auto;
+}
+.item
+{
+	padding:20px;
+	margin-bottom:20px;
+	border:2px solid #666;
+}
+#content .item h2
+{
+	font-size:16px;
+	font-weight:bold;
+	border-bottom:2px solid #666;
+	margin-bottom:10px;
+}
+#content .item li
+{
+	display:inline;
+}
+#content .item li a img
+{
+	width:250px;
+	height:220px;
+	border:1px solid #CCC;
+}
+#menu
+{
+	position:fixed;
+	top:100px;
+	left:50%;
+	margin-left:415px;
+	width:100px;
+}
+#menu ul li a
+{
+	display:block;
+	margin:5px 0;
+	font-size:14px;
+	font-weight:bold;
+	color:#333;
+	width:90px;
+	height:50px;
+	line-height:50px;
+	text-decoration:none;
+	text-align:center;
+}
+#menu ul li a:hover,
+#menu ul li a.current
+{
+	color:white;
+	background:#0C3;
+}
+#btn
+{
+	height:50px;
+	width:50px;
+	background-color:black;
+	position:fixed;
+	color:white;
+	font-size:16px;
+	font-weight:bold;
+	text-decoration:none;
+	text-align:center;
+	line-height:25px;
+	left:50%;
+	margin-left:550px;
+	bottom:30px;
+	display:none;
+}
+
+</style>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+     $(document).ready(function() {
+        $(window).scroll(function(){
+			var top =$(document).scrollTop();
+			var menu=$('#menu');
+			var items=$('#content').find('.item');
+			var currentId="";
+			items.each(function() {
+				var m=$(this);
+				var itemTop=m.offset().top;
+				if(top>itemTop-200)
+				{
+					currentId="#"+m.attr("id");
+				}
+				else
+				{
+					return false;
+				}
+                
+            });
+			
+			var currentLink=menu.find('.current');
+			if(currentId&&currentLink.attr("href")!= currentId)
+			{
+				currentLink.removeClass('current');
+				menu.find("[href="+currentId+"]").addClass('current');
+			}
+			});
+    });
+	window.onload=function()
+{
+	var obtn=document.getElementById('btn');
+	var clientHeight=document.documentElement.clientHeight;
+	var timer=null;
+	
+	window.onscroll=function()
+	{
+		var ostop=document.documentElement.scrollTop||document.body.scrollTop;
+		if(ostop>=clientHeight)
+		{
+			obtn.style.display='block';
+		}
+		else
+		{
+			obtn.style.display='none';
+		}
+		
+	}
+	obtn.onclick=function(){
+		timer=setInterval(function(){
+		var ostop=document.documentElement.scrollTop||document.body.scrollTop;
+		var speed=Math.floor(-ostop/6);
+		document.documentElement.scrollTop=document.body.scrollTop=ostop+speed;
+		if(ostop==0)
+		{
+			clearInterval(timer);
+		}
+	},30);
+  }
+}
+</script>
+</head>
+
+<body>
+<div id="menu">
+  <ul>
+    <li><a href="#item1" class="current">1F 居家生活</a></li>
+    <li><a href="#item2">2F 亲子时光</a></li>
+    <li><a href="#item3">3F 户外出行</a></li>
+    <li><a href="#item4">4F 打造爱巢</a></li>
+    <li><a href="#item5">5F 潮电酷玩</a></li>
+    <li><a href="#item6">6F 美丽人生</a></li>
+  </ul>
+</div>
+<div id="content">
+  <h1>地狗购物网</h1>
+  <div id="item1" class="item">
+    <h2>1F 居家生活</h2>
+    <ul>
+      <li><a href="#"><img src="image/1.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/2.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/9.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/4.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/5.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/6.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/7.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/15.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/9.png" alt=""/></a></li>
+    </ul>
+  </div>
+  <div id="item2" class="item">
+    <h2>2F 亲子时光</h2>
+    <ul>
+      <li><a href="#"><img src="image/10.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/11.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/12.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/2.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/14.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/15.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/16.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/17.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/6.png" alt=""/></a></li>
+    </ul>
+  </div>
+  <div id="item3" class="item">
+    <h2>3F 户外出行</h2>
+    <ul>
+      <li><a href="#"><img src="image/19.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/20.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/21.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/22.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/23.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/24.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/1.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/2.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/12.png" alt=""/></a></li>
+    </ul>
+  </div>
+  <div id="item4" class="item">
+    <h2>4F 打造爱巢</h2>
+    <ul>
+      <li><a href="#"><img src="image/4.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/5.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/6.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/7.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/22.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/9.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/10.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/11.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/12.png" alt=""/></a></li>
+    </ul>
+  </div>
+  <div id="item5" class="item">
+    <h2>5F 潮电酷玩</h2>
+    <ul>
+      <li><a href="#"><img src="image/22.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/14.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/15.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/16.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/17.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/1.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/19.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/20.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/21.png" alt=""/></a></li>
+    </ul>
+  </div>
+  <div id="item6" class="item">
+    <h2>6F 美丽人生</h2>
+    <ul>
+      <li><a href="#"><img src="image/22.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/23.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/24.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/1.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/2.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/17.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/4.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/5.png" alt=""/></a></li>
+      <li><a href="#"><img src="image/6.png" alt=""/></a></li>
+    </ul>
+  </div>
+</div>
+<a href="javascript:;" id="btn">回到<br />顶部</a>
+</body>
+</html>

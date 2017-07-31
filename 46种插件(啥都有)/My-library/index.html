@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<title>我的插件库</title>
+<style>
+html, body {
+	height: 100%;
+}
+
+body {
+	background-image: url("bg.jpg");
+	margin: 0;
+	font-family: Helvetica, sans-serif;;
+	overflow: hidden;
+	/*background-size: cover;*/
+}
+
+a {
+	color: #ffffff;
+}
+
+#info {
+	position: absolute;
+	width: 100%;
+	color: #ffffff;
+	padding: 5px;
+	font-family: 'clipregular',Arial,sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	text-align: center;
+	z-index: 1;
+	text-shadow: 0 0 5px #adf5f7,0 0 10px #adf5f7,0 0 15px #adf5f7;
+}
+
+#menu {
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+	text-align: center;
+	font-family: verdana,Tahoma,Arial,Hei,"Microsoft Yahei",SimHei;
+}
+
+.element {
+	width: 340px;
+	height: 340px;
+	box-shadow: 0px 0px 12px rgba(0,255,255,0.5);
+	border: 1px solid rgba(127,255,255,0.25);
+	text-align: center;
+	cursor: default;
+	display:block;
+}
+
+.element:hover {
+	box-shadow: 0px 0px 12px rgba(0,255,255,0.75);
+	border: 1px solid rgba(127,255,255,0.75);
+}
+
+	.element .number {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		font-size: 30px;
+		color: rgba(127,255,255,0.75);
+	}
+
+	.element .symbol {
+		position: absolute;
+		top: 40px;
+		left: 0px;
+		right: 0px;
+		font-size: 48px;
+		font-weight: bold;
+		color: rgba(255,255,255,0.75);
+		text-shadow: 0 0 10px rgba(0,255,255,0.95);
+	}
+
+	.element .details {
+		position: absolute;
+		top: 140px;
+		left: 0px;
+		right: 0px;
+		font-size: 36px;
+		color: rgba(127,255,255,0.75);
+		text-shadow: 0 0 2px #adf5f7;
+	}
+
+button {
+	color: rgba(127,255,255,0.75);
+	background: transparent;
+	outline: 1px solid rgba(127,255,255,0.75);
+	border: 0px;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+button:hover {
+	background-color: rgba(0,255,255,0.5);
+}
+button:active {
+	color: #000000;
+	background-color: rgba(0,255,255,0.75);
+}
+</style>
+</head>
+<body>
+<script src="js/three.min.js" ></script>
+<script src="js/tween.min.js" ></script>
+<script src="js/TrackballControls.js" ></script>
+<script src="js/CSS3DRenderer.js" ></script>
+
+<div id="container"></div>
+<div id="info">Mylibrary</div>
+<div id="menu">
+<button id="table">表面</button>
+<button id="sphere">球体</button>
+<button id="helix">螺旋</button>
+<button id="grid">网格</button>
+</div>
+
+<script>
+
+var table = [
+	"Mylibrary", "6款html5手机导航菜单特效", "...", 1, 1,"Mylibrary/fu001/index.html",
+	"Mylibrary", "7款CSS3鼠标滑过超链接动画特效", "...", 2, 1,"Mylibrary/fu002/index.html",
+	"Mylibrary", "HTML5canvas哆啦A梦", "...", 3, 1,"Mylibrary/fu003/index.html",
+	"Mylibrary", "CSS3+SVG制作超炫爆裂式关闭模态窗口", "...", 4, 1,"Mylibrary/fu004/index.html",
+	"Mylibrary", "CSS3关闭按钮动画", "...", 5, 1,"Mylibrary/fu005/index.html",
+	"Mylibrary", "CSS3幻灯片翻书3D切换", "...", 6, 1,"Mylibrary/fu006/index.html",
+	"Mylibrary", "CSS3全屏背景图片缩小渐变代码", "...", 7, 1,"Mylibrary/fu007/index.html",
+	"Mylibrary", "CSS3实现六边形网格布局样式代码", "...", 8, 1,"Mylibrary/fu008/index.html",
+	"Mylibrary", "CSS3鼠标滑过按钮背景动画", "...", 9, 1,"Mylibrary/fu009/index.html",
+	"Mylibrary", "CSS3鼠标滑过按钮流光效果", "...", 1, 2,"Mylibrary/fu010/index.html",
+	"Mylibrary", "CSS3鼠标滑过图片显示文字动画库", "...", 2, 2,"Mylibrary/fu011/index.html",
+	"Mylibrary", "CSS3鼠标略过动画填充背景按钮", "...", 3, 2,"Mylibrary/fu012/index.html",
+	"Mylibrary", "CSS3图片向上3D翻转渐隐消失特效", "...", 4, 2,"Mylibrary/fu013/index.html",
+	"Mylibrary", "HTML5 Canvas彩色小球碰撞运动特效", "...", 5, 2,"Mylibrary/fu014/index.html",
+	"Mylibrary", "HTML5经典坦克大战游戏代码", "...", 6, 2,"Mylibrary/fu015/index.html",
+	"Mylibrary", "jQuery CSS3点击向上拉伸切换特效", "...", 7, 2,"Mylibrary/fu016/index.html",
+	"Mylibrary", "jQuery+CSS3鼠标移入图片边框炫酷动画特效", "...", 8, 2,"Mylibrary/fu017/index.html",
+	"Mylibrary", "jQuery表单输入框浮动标签特效", "...", 9, 2,"Mylibrary/fu018/index.html",
+	"Mylibrary", "jquery底部带缩略图的幻灯片代码", "...", 1, 3,"Mylibrary/fu019/index.html",
+	"Mylibrary", "jQuery和CSS3添加到购物车特效", "...", 2, 3,"Mylibrary/fu020/index.html",
+	"Mylibrary", "jQuery简洁遮罩弹出层代码", "...", 3, 3,"Mylibrary/fu021/index.html",
+	"Mylibrary", "jQuery鼠标滑过图片3D透视代码", "...", 4, 3,"Mylibrary/fu022/index.html",
+	"Mylibrary", "jQuery五屏轮播手风琴代码", "...", 5, 3,"Mylibrary/fu023/index.html",
+	"Mylibrary", "jQuery移动端、手机端触摸屏滑动插件代码", "...", 6, 3,"Mylibrary/fu024/index.html",
+	"Mylibrary", "jQuery中国省市区三级联动特效", "...", 7, 3,"Mylibrary/fu025/index.html",
+	"Mylibrary", "JS点击事件水珠爆炸", "...", 8, 3,"Mylibrary/fu026/index.html",
+	"Mylibrary", "JS仿商城图片变暗效果", "...", 9, 3,"Mylibrary/fu027/index.html",
+	"Mylibrary", "js小米商城商品加入购物车代码", "...", 1, 4,"Mylibrary/fu028/index.html",
+	"Mylibrary", "pc内容酷炫滚屏", "...", 2, 4,"Mylibrary/fu029/index.html",
+	"Mylibrary", "QQ空间时光轴", "...", 3, 4,"Mylibrary/fu030/index.html",
+	"Mylibrary", "SVG页面弹出窗口特效", "...", 4, 4,"Mylibrary/fu031/index.html",
+	"Mylibrary", "单复选按钮", "...", 5, 4,"Mylibrary/fu032/index.html",
+	"Mylibrary", "点击图片，相册播放", "...", 6, 4,"Mylibrary/fu033/index.html",
+	"Mylibrary", "堆叠式幻灯片插件", "...", 7, 4,"Mylibrary/fu034/index.html",
+	"Mylibrary", "分成一道道的css3的轮播图", "...", 8, 4,"Mylibrary/fu035/index.html",
+	"Mylibrary", "轮播图12种效果-SuperSlidev大话主席", "...", 9, 4,"Mylibrary/fu036/index.html",
+	"Mylibrary", "金字塔轮播", "...", 1, 5,"Mylibrary/fu037/index.html",
+	"Mylibrary", "流星雨（鼠标控制方向速度）", "...", 2, 5,"Mylibrary/fu038/index.html",
+	"Mylibrary", "瀑布流效果", "...", 3, 5,"Mylibrary/fu039/index.html",
+	"Mylibrary", "手机端触屏滑动（共33种，可从文件夹查询）", "...", 4, 5,"Mylibrary/fu040/demos/index.html",
+	"Mylibrary", "手机端滚屏效果实例", "...", 5, 5,"Mylibrary/fu041/index.html",
+	"Mylibrary", "手机时间插件", "...", 6, 5,"Mylibrary/fu042/index.html",
+	"Mylibrary", "鼠标轮滚动滚屏", "...", 7, 5,"Mylibrary/fu043/index.html",
+	"Mylibrary", "图片跟dataURL互转", "...", 8, 5,"Mylibrary/fu044/index.html",
+	"Mylibrary", "原生js带提示留言表单验证代码", "...", 9, 5,"Mylibrary/fu045/index.html"/*,
+	"Mylibrary", "Palladium", "#106.42", 1, 6,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Silver", "#107.8682", 2, 6,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Cadmium", "#112.411", 3, 6,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Indium", "#114.818", 4, 6,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Tin", "#118.71", 5, 6,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Antimony", "#121.76", 6, 6,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Tellurium", "127.6", 7, 6,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Iodine", "126.90447", 8, 6,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Xenon", "#131.293", 9, 6,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Caesium", "#132.9054", 1, 7,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Barium", "#132.9054", 2, 7,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Lanthanum", "138.90547", 3, 7,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Cerium", "#140.116", 4, 7,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Praseodymium", "140.70765", 5, 7,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Neodymium", "#144.242", 6, 7,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Promethium", "(145)", 7, 7,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Samarium", "#150.36", 8, 7,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Europium", "#151.764", 9, 7,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Tantalum", "180.94788", 1, 8,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Tungsten", "#183.84", 2, 8,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Rhenium", "#186.207", 3, 8,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Osmium", "#190.23", 4, 8,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Iridium", "#192.217", 5, 8,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Platinum", "#195.084", 6, 8,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Gold", "198.988589", 7, 8,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Mercury", "#200.59", 8, 8,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Thallium", "#204.3833", 9, 8,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Lead", "207.2", 1, 9,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Bismuth", "#208.9804", 2, 9,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Polonium", "(209)", 3, 9,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Astatine", "(210)", 4, 9,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Radon", "(222)", 5, 9,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Francium", "(223)", 6, 9,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Radium", "(226)", 7, 9,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Actinium", "(227)", 8, 9,"Mylibrary/fu001/index.html",
+	"Mylibrary", "Thorium", "232.03806", 9, 9,"Mylibrary/fu001/index.html"*/
+];
+
+var camera, scene, renderer;
+var controls;
+
+var objects = [];
+var targets = { table: [], sphere: [], helix: [], grid: [] };
+
+init();
+animate();
+
+function init() {
+
+	camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 10000 );
+	camera.position.z = 3000;     //俯瞰 初始化的z轴值
+
+	scene = new THREE.Scene();
+
+	// table
+
+	for ( var i = 0; i < table.length; i += 6 ) {
+
+		var element = document.createElement( 'a' );
+		element.className = 'element';
+		element.style.backgroundColor = 'rgba(0,127,127,' + ( Math.random() * 0.5 + 0.25 ) + ')';
+		element.setAttribute('href',table[ i + 5 ]);
+
+		var number = document.createElement( 'div' );
+		number.className = 'number';
+		number.textContent = (i/6) + 1;
+		element.appendChild( number );
+
+		var symbol = document.createElement( 'div' );
+		symbol.className = 'symbol';
+		symbol.textContent = table[ i ];
+		element.appendChild( symbol );
+
+		var details = document.createElement( 'div' );
+		details.className = 'details';
+		details.innerHTML = table[ i + 1 ] + table[ i + 2 ];
+		element.appendChild( details );
+
+		var object = new THREE.CSS3DObject( element );
+		object.position.x = Math.random() * 6000 - 2000;     //设置x轴的初始位置
+		object.position.y = Math.random() * 6000 - 2000;
+		object.position.z = Math.random() * 6000 - 2000;
+		scene.add( object );
+
+		objects.push( object );
+
+		//
+
+		var object = new THREE.Object3D();
+		object.position.x = ( table[ i + 3 ] * 360 ) - 1800;      //设置表面的x轴位置   每个格子的大小
+		object.position.y = - ( table[ i + 4 ] * 360 ) + 1200;
+
+		targets.table.push( object );
+
+	}
+
+	// sphere  球状设置
+
+	var vector = new THREE.Vector3();
+
+	for ( var i = 0, l = objects.length; i < l; i ++ ) {
+
+		var phi = Math.acos( -1 + ( 2 * i ) / l );
+		var theta = Math.sqrt( l * Math.PI ) * phi;
+
+		var object = new THREE.Object3D();
+
+		object.position.x = 800 * Math.cos( theta ) * Math.sin( phi );
+		object.position.y = 800 * Math.sin( theta ) * Math.sin( phi );
+		object.position.z = 800 * Math.cos( phi );
+
+		vector.copy( object.position ).multiplyScalar( 2 );
+
+		object.lookAt( vector );
+
+		targets.sphere.push( object );
+
+	}
+
+	// helix   螺旋设置
+
+	var vector = new THREE.Vector3();
+
+	for ( var i = 0, l = objects.length; i < l; i ++ ) {
+
+		var phi = i * 0.4 + Math.PI;
+
+		var object = new THREE.Object3D();
+
+		object.position.x = 900 * Math.sin( phi );     //900控制半径宽度
+		object.position.y = - ( i * 26 ) + 500;
+		object.position.z = 900 * Math.cos( phi );     //900控制半径宽度
+
+		vector.x = object.position.x * 2;
+		vector.y = object.position.y;
+		vector.z = object.position.z * 2;
+
+		object.lookAt( vector );
+
+		targets.helix.push( object );
+
+	}
+
+	// grid   网格设值
+
+	for ( var i = 0; i < objects.length; i ++ ) {
+
+		var object = new THREE.Object3D();
+
+		object.position.x = ( ( i % 5 ) * 400 ) - 800;
+		object.position.y = ( - ( Math.floor( i / 5 ) % 5 ) * 400 ) + 800;
+		object.position.z = ( Math.floor( i / 25 ) ) * 1600 - 1600;
+
+		targets.grid.push( object );
+
+	}
+
+	//
+
+	renderer = new THREE.CSS3DRenderer();
+	renderer.setSize( window.innerWidth, window.innerHeight );
+	renderer.domElement.style.position = 'absolute';
+	document.getElementById( 'container' ).appendChild( renderer.domElement );
+
+	//
+
+	controls = new THREE.TrackballControls( camera, renderer.domElement );
+	controls.rotateSpeed = 0.1;      //转速设置
+	controls.minDistance = 500;     //y轴最近的值
+	controls.maxDistance = 7000;     //y轴最远的值
+	controls.addEventListener( 'change', render );
+
+	var button = document.getElementById( 'table' );
+	button.addEventListener( 'click', function ( event ) {
+
+		transform( targets.table, 2000 );
+
+	}, false );
+
+	var button = document.getElementById( 'sphere' );
+	button.addEventListener( 'click', function ( event ) {
+
+		transform( targets.sphere, 2000 );
+
+	}, false );
+
+	var button = document.getElementById( 'helix' );
+	button.addEventListener( 'click', function ( event ) {
+
+		transform( targets.helix, 2000 );
+
+	}, false );
+
+	var button = document.getElementById( 'grid' );
+	button.addEventListener( 'click', function ( event ) {
+
+		transform( targets.grid, 2000 );
+
+	}, false );
+
+	transform( targets.table, 5000 );
+
+	//
+
+	window.addEventListener( 'resize', onWindowResize, false );
+
+}
+
+function transform( targets, duration ) {
+
+	TWEEN.removeAll();
+
+	for ( var i = 0; i < objects.length; i ++ ) {
+
+		var object = objects[ i ];
+		var target = targets[ i ];
+
+		new TWEEN.Tween( object.position )
+			.to( { x: target.position.x, y: target.position.y, z: target.position.z }, Math.random() * duration + duration )
+			.easing( TWEEN.Easing.Exponential.InOut )
+			.start();
+
+		new TWEEN.Tween( object.rotation )
+			.to( { x: target.rotation.x, y: target.rotation.y, z: target.rotation.z }, Math.random() * duration + duration )
+			.easing( TWEEN.Easing.Exponential.InOut )
+			.start();
+
+	}
+
+	new TWEEN.Tween( this )
+		.to( {}, duration * 2 )
+		.onUpdate( render )
+		.start();
+
+}
+
+function onWindowResize() {     //窗口大小调整
+
+	camera.aspect = window.innerWidth / window.innerHeight;
+	camera.updateProjectionMatrix();
+
+	renderer.setSize( window.innerWidth, window.innerHeight );
+
+	render();
+
+}
+
+function animate() {          //运动
+
+	requestAnimationFrame( animate );
+
+	TWEEN.update();
+
+	controls.update();
+
+}
+
+function render() {
+
+	renderer.render( scene, camera );
+
+}
+
+</script>
+</body>
+</html>

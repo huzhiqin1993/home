@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="Lwolf" name="author">
+<title>jQuery瀑布流布局插件Grid-A-Licious - JS素材</title>
+<link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+<div class="content">
+  <div id="device" class="gridalicious">
+    <div class="galcolumn">
+      <div class="item"><img src="images/1.jpg"/><p>A5源码</p></div>
+      <div class="item"><img src="images/2.jpg"/><p>A5源码</p></div>
+      <div class="item"><img src="images/3.jpg"/><p>A5源码</p></div>
+      <div class="item"><img src="images/4.jpg"/><p>A5源码</p></div>
+      <div class="item"><img src="images/5.jpg"/><p>A5源码</p></div>
+      <div class="item"><img src="images/6.jpg"/><p>A5源码</p></div>
+      <div class="item"><img src="images/7.jpg"/><p>A5源码</p></div>
+      <div class="item"><img src="images/8.jpg"/><p>A5源码</p></div>
+      <div class="item"><img src="images/9.jpg"/><p>A5源码</p></div>
+      <div class="item"><img src="images/10.jpg"/><p>A5源码</p></div>
+      <div class="item"><img src="images/4.jpg"/><p>A5源码</p></div>
+      <div class="item"><img src="images/5.jpg"/><p>A5源码</p></div>
+      <div class="item"><img src="images/6.jpg"/><p>A5源码</p></div>
+      <div class="item"><img src="images/7.jpg"/><p>A5源码</p></div>
+      <div class="item"><img src="images/8.jpg"/><p>A5源码</p></div>
+    </div>
+    
+  </div>
+</div>
+<script src="js/jquery-1.8.3.min.js"></script> 
+<script src="js/jquery.grid-a-licious.min.js"></script> 
+<script type="text/javascript">
+			//模拟滚动条滚动时随机添加内容
+            makeboxes = function() {
+                var boxes = new Array;   
+                var randTxt = ['源码下载 - down.admin5.com','A5源码JS代码免费下载'];
+                var amount = Math.floor(Math.random()*10); 
+                for(i=1;i<amount;i++){
+                    num = Math.floor(Math.random()*randTxt.length); 
+                    div = $('<div></div>').addClass('item'); 
+                    content = "<img src='images/"+i+".jpg'/><p>"+randTxt[num]+"</p>";
+                    div.append(content);
+                    boxes.push(div);
+                }
+                return boxes;
+            }
+			//滚动条事件
+			$(document).ready(function () {         
+				$(window).scroll(function () {
+					if(($(window).scrollTop() + $(window).height()) == $(document).height())
+					{
+						$("#device").gridalicious('append', makeboxes());
+					}
+			});
+			//主要部分
+            $("#device").gridalicious({
+                gutter: 20,
+                width: 300,
+                animate: true,
+                animationOptions: {
+                        speed: 150,
+                        duration: 400,
+                        complete:function(data){
+							console.log("A5源码 - down.admin5.com");	
+						}
+                },
+            });
+        });
+    </script>
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+<p>适用浏览器：IE8、360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗. </p>
+<p>来源：<a href="http://down.admin5.com/" target="_blank">A5源码</a></p>
+</div>
+</body>
+</html>

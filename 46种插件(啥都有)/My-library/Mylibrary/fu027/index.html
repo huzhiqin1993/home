@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312" />
+<title>JS仿商城图片变暗效果-A5源码</title>
+<link type="text/css" href="css/lrtk.css" rel="stylesheet" />
+<script type="text/javascript" src="js/jquery.js" ></script>
+<script type="text/javascript">
+	$(function(){
+		$(".floor-maskItem").mouseover(function(){
+			$(this).addClass("qq").parent().addClass("hover");
+		}).mouseout(function(){
+			$(this).removeClass("qq").parent().removeClass("hover");
+		});
+	})
+</script>
+</head>
+<body>
+<!-- 代码开始 -->
+<div class="area01">
+	<div class="box01-tmall"><img src="images/bg01.jpg" /></div>
+	<div class="box">
+		<a href="http://down.admin5.com/" target="_blank" class="floor-maskItem" style="left:0;top:0;">
+			<img src="images/img01.jpg" />
+			<div class="mask"></div>
+		</a>
+		<a href="http://down.admin5.com/" target="_blank" class="floor-maskItem" style="left:195px;top:0;">
+			<img src="images/img02.jpg" />
+			<div class="mask" style="width:390px;"></div>
+		</a>
+		<a href="http://down.admin5.com/" target="_blank" class="floor-maskItem" style="left:0;top:150px;">
+			<img src="images/img03.jpg" />
+			<div class="mask"></div>
+		</a>
+		<a href="http://down.admin5.com/" target="_blank" class="floor-maskItem" style="left:195px;top:150px;">
+			<img src="images/img04.jpg" />
+			<div class="mask"></div>
+		</a>
+		<a href="http://down.admin5.com/" target="_blank" class="floor-maskItem" style="left:390px;top:150px;width:195px;">
+			<img src="images/img05.jpg" />
+			<div class="mask"></div>
+		</a>
+		<a href="http://down.admin5.com/" target="_blank" class="floor-maskItem" style="left:585px;top:0;height:300px;">
+			<img src="images/img06.jpg" />
+			<div class="mask" style="height:300px;"></div>
+		</a>
+	</div>
+</div>
+
+<!-- 代码结束 -->
+
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+</div>
+
+</body>
+</html>

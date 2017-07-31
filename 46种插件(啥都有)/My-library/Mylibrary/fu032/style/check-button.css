@@ -1,0 +1,164 @@
+/*global*/
+body, p{margin: 0;padding: 0;font-family: 'Microsoft YaHei','Hiragino Sans GB',Helvetica,Arial,'Lucida Grande',sans-serif;}
+h1{text-align: center;}
+h2{font-size: 1.4em;}
+h2, h3{margin: 20px 0 5px 0;}
+.container{width: 80%; margin: 0 auto; margin-bottom: 30px;}
+/*按钮基本样式*/
+	/*按钮组包裹元素*/
+	.btn-group {padding-bottom: 7px;}
+	/*按钮*/
+	.radio, .checkbox {margin: 15px 7px; cursor: pointer; line-height: 14px; position: relative;}
+	/*按钮文字*/
+	.radio_value, .checkbox_value {position: absolute; top: 5px; left: 35px; width: 900px;}
+	/*按钮文、字间距*/
+	.radio_value .radio, .checkbox_value .checkbox {margin-right: 7px;}
+	/*被选中时*/
+	.radio.checked,.checkbox.checked {}
+	/*皮肤：精灵fairy*/
+		.fairy body {background-color: hsla(0,0%,15%,0.9);color: #ddd;text-shadow: 0px 1px #000;/*text-shadow: 0px 1px 0px hsla(0,0%,100%,.15);*/}
+		.fairy .btn-group {border-bottom: 1px solid hsla(0,0%,0%,.5);}
+		.fairy .radio, .fairy .checkbox {
+		  margin: 10px;
+		  width: 24px;
+		  height: 24px;
+		  border-radius: 12px;
+		  cursor: pointer;
+		  vertical-align: middle;
+		  box-shadow: hsla(0,0%,100%,.15) 0 1px 1px, inset hsla(0,0%,0%,.5) 0 0 0 1px;
+		  background-color: hsla(0,0%,0%,.2);
+		  background-image: radial-gradient( hsla(100,100%,90%,1) 0%, hsla(100,100%,70%,1) 15%, hsla(90,100%,60%,.3) 28%, hsla(80,100%,30%,0) 70% );
+		  background-repeat: no-repeat;
+		  transition: background-position .15s cubic-bezier(.8, 0, 1, 1),
+		  transform .25s cubic-bezier(.8, 0, 1, 1);
+		  position: relative;}
+		.fairy .radio.checked, .fairy .checkbox.checked {transition: background-position .2s .15s cubic-bezier(0, 0, .2, 1); transform .25s cubic-bezier(0, 0, .2, 1);}
+		.fairy .radio:hover, .fairy .checkbox:hover { transform: scale(1.2);transition: -webkit-transform .1s cubic-bezier(0, 0, .2, 1);}
+		/*radio specific*/
+		.fairy .radio {background-position: 0 24px;}
+		.fairy .radio.checked {background-position: 0 0;}
+		.fairy .radio.checked ~ .radio {background-position: 0 -24px;}
+		/*checkbox specific*/
+		.fairy .checkbox {border-radius: 0px; background-image: none;}
+		@keyframes dothabottomcheck { 0% {height: 0;}100% {height: 10px;}}
+		@keyframes dothatopcheck {0% {height: 0;}50% {height: 0;}100% {height: 25px;}}
+		.fairy .checkbox::before, .fairy .checkbox::after {
+		  box-sizing: border-box;
+		  position: absolute;
+		  height: 0;
+		  width: 5px;
+		  background-image: radial-gradient( hsla(100,100%,90%,1) 0%, hsla(100,100%,70%,1) 45%, hsla(90,100%,60%,.3) 80%);
+		  display: inline-block;
+		  transform-origin: left top;
+		  border-radius: 5px;
+		  content: ' ';
+		  transition: opacity ease .5;}
+		.fairy .checkbox::before {  top: 21px;  left: 10px;  transform: rotate(-135deg);}
+		.fairy .checkbox::after {  top: 13px;  left: 2px;  transform: rotate(-45deg);}
+		.fairy .checkbox.checked::after {  height: 10px;  animation: dothabottomcheck 0.2s ease 0s forwards;}
+		.fairy .checkbox.checked::before {height: 25px;  animation: dothatopcheck 0.4s ease 0s forwards;}
+
+	/*皮肤： 钢铁iron*/
+		.iron body {background-color: #555;color: #ccc;text-shadow: 0px 1px #000;}
+		.iron .btn-group {border-bottom: 1px solid #aaa;}
+		.iron .radio, .iron .checkbox {
+			width: 24px;
+			height: 24px;
+			position: relative;
+			margin: 10px;
+			background: #fcfff4;
+			background: linear-gradient(to bottom, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+			border-radius: 50px;
+			box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+		  }
+		.iron .radio::before, .iron .checkbox::before {
+			content: '';
+			width: 18px;
+			height: 18px;
+			position: absolute;
+			top: 3px;
+			left: 3px;
+			background: linear-gradient(to bottom, #222222 0%, #45484d 100%);
+			border-radius: 50px;
+			box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px white;
+		}
+		.iron .checkbox {border-radius: 0px;}
+		.iron .checkbox::before {border-radius: 0px;}
+		.iron .radio::after, .iron .checkbox::after{
+			content: '';
+			width: 9px;
+			height: 5px;
+			position: absolute;
+			top: 7px;
+			left: 6px;
+			border: 3px solid #fcfff4;
+			border-top: none;
+			border-right: none;
+			background: transparent;
+			filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+			opacity: 0;
+			transform: rotate(-45deg);
+			border-radius: 0px;
+		}
+		.iron .checkbox::after{
+	        width: 11px;
+		    height: 6px;
+		    top: 5px;
+		    left: 5px;
+		}
+		.iron .radio:hover::after, .iron .checkbox:hover::after {
+			filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+			opacity: 0.3;
+		}
+		.iron .radio.checked::after, .iron .checkbox.checked::after {filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;}
+		.iron .radio:hover, .iron .checkbox:hover { transform: scale(1.2);transition: -webkit-transform .1s cubic-bezier(0, 0, .2, 1);}
+	
+	/*皮肤：简约simple*/
+		.simple body {background-color: #fff;color: #777;text-shadow: 0px 1px #fff;}
+		.simple .btn-group {border-bottom: 1px solid #eee;}
+		.simple .radio, .simple .checkbox {
+			width: 20px;
+			height: 20px;
+			position: relative;
+			margin: 8px 10px;
+			border: 3px solid #45484d;
+			border-radius: 50px;
+		  }
+		.simple .radio_value, .simple .checkbox_value {top: 3px; }
+		.simple .checkbox {border-radius: 0px;}
+		.simple .radio::after{
+			content: '';
+			width: 8px;
+			height: 8px;
+			position: absolute;
+			top: 3px;
+			left: 3px;
+			background: #45484d;
+			border: 3px solid #45484d;
+			opacity: 0;
+			border-radius: 9px;
+		}
+		.simple .checkbox::after{
+			content: '';
+			width: 11px;
+			height: 6px;
+			position: absolute;
+			top: 3px;
+			left: 3px;
+			border: 4px solid #45484d;
+			border-top: none;
+			border-right: none;
+			background: transparent;
+			filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+			opacity: 0;
+			transform: rotate(-45deg);
+			border-radius: 0px;
+		}
+		.simple .radio:hover::after, .simple .checkbox:hover::after {
+			filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+			opacity: 0.3;
+		}
+		.simple .radio.checked::after, .simple .checkbox.checked::after {filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);opacity: 1;}
+		.simple .radio:hover, .simple .checkbox:hover { transform: scale(1.2);transition: -webkit-transform .1s cubic-bezier(0, 0, .2, 1);}
+		

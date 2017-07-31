@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <title>Pure CSS3 Lavalamp Menu</title>
+<style>
+*{
+	margin:0;
+padding:0;
+list-style:none;
+text-decoration:none;
+}
+html, body {
+  background: -webkit-radial-gradient(#fcfdfd, #9ca3a6);
+  background: -moz-radial-gradient(#fcfdfd, #9ca3a6);
+  background: -ms-radial-gradient(#fcfdfd, #9ca3a6);
+  background: -o-radial-gradient(#fcfdfd, #9ca3a6);
+  background: radial-gradient(#fcfdfd, #9ca3a6);
+  height: 100%;
+  width: 100%; }
+
+.rap-container {
+  width: 1000px;
+  margin: 10px auto; }
+
+.section-hd {
+  text-align: center;
+  margin-bottom: 20px; }
+  .section-hd h3 {
+    font-size: 40px; }
+
+.section-bd {
+  position: relative; }
+
+.menu-list {
+  padding: 0;
+  border-radius: 5px;
+  background: -webkit-linear-gradient(top, #dbdbdb, #999999);
+  background: -moz-linear-gradient(top, #dbdbdb, #999999);
+  width: 200px;
+  margin: 10px auto; }
+  .menu-list li {
+    list-style: none;
+    text-align: center;
+    line-height: 40px; }
+    .menu-list li:first-child {
+      padding-top: 15px; }
+      .menu-list li:first-child a {
+        color: #980202; }
+    .menu-list li:nth-child(5) {
+      padding-bottom: 15px; }
+    .menu-list li a {
+      display: block;
+      text-decoration: none;
+      color: #484848;
+      text-shadow: 0 2px 2px #e0e0e0;
+      font-size: 24px;
+      position: relative;
+      z-index: 20; }
+      .menu-list li a:hover {
+        color: #fff;
+        text-shadow: none; }
+
+.decoration {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  width: 250px;
+  height: 40px;
+  margin-left: -125px;
+  background: -webkit-linear-gradient(top, #fe3e3e, #a60101);
+  background: -moz-linear-gradient(top, #fe3e3e, #a60101);
+  -webkit-transition: top 0.2s linear;
+  -moz-transition: top 0.2s linear; }
+  .decoration:before, .decoration:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    border-style: solid;
+    border-width: 7px;
+    border-color: #5D0F0F #5D0F0F transparent transparent;
+    bottom: -14px;
+    left: 0; }
+  .decoration:after {
+    left: 235px;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg); }
+  .decoration span:before, .decoration span:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    border-style: solid; }
+  .decoration .top-dec:before, .decoration .top-dec:after {
+    border-width: 15px;
+    border-color: #FF1515 #FF1515 transparent transparent;
+    top: 10px;
+    left: -30px; }
+  .decoration .top-dec:after {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    left: 250px; }
+  .decoration .bottom-dec:before, .decoration .bottom-dec:after {
+    border-width: 15px;
+    border-color: #920000 #920000 transparent transparent;
+    top: 38px;
+    left: -22px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg); }
+  .decoration .bottom-dec:after {
+    left: 242px; }
+
+.menu-list li:nth-child(1):hover ~ .decoration {
+  top: 15px; }
+
+.menu-list li:nth-child(2):hover ~ .decoration {
+  top: 55px; }
+
+.menu-list li:nth-child(3):hover ~ .decoration {
+  top: 95px; }
+
+.menu-list li:nth-child(4):hover ~ .decoration {
+  top: 135px; }
+
+.menu-list li:nth-child(5):hover ~ .decoration {
+  top: 175px; }
+
+</style>
+</head>
+<body>
+<div class="page">
+<div class="wrap-header">
+   <div id="header">
+       <div class="inner clearfix"></div>
+   </div>
+</div>
+<div class="rap-container">
+   <div id="container" class="clearfix">
+   <div id="main">
+   <div class="inner clearfix">
+      <div class="section-block">
+    <div class="section-hd">
+      <h3>Pure CSS3 Lavalamp Menu</h3>
+    </div>
+    <div class="section-bd"> 
+      <ul class="menu-list">
+        <li><a href="#">Jsaon</a></li>
+        <li><a href="#">Alex020</a></li>
+        <li><a href="#">Dragon</a></li>
+        <li><a href="#">Susun</a></li>
+        <li><a href="#">jack Beam</a></li>
+        <p class="decoration">
+          <span class="top-dec"></span>
+          <span class="bottom-dec"></span>
+        </p>
+      </ul>
+      </div>
+      </div>
+      </div>
+   </div>
+       
+   </div>
+</div>
+<div class="wrap-footer">
+   <div id="footer">
+       <div class="inner clearfix"></div>
+   </div>
+</div>
+</div> 
+</body>
+</html>

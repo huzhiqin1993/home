@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>article</title>
+	<style type="text/css">
+
+
+    body{
+    	background-color: #f3f5f7;
+    	font-size: 16px;
+    }
+     div{
+     	width: 1000px;
+     	
+     	margin:0 auto;
+     }
+     pre
+     {
+     	font-size: 16px;
+
+     	font-family: "微软雅黑";
+
+     	
+
+     }
+
+     textarea
+     {
+      background-color: #f3f5f7;
+      font-size: 16px;
+      font-family: "微软雅黑";
+      border: none;
+     }
+	</style>
+</head>
+<body>
+   <div>
+	<h2>Javascript基础语法</h2>
+	<p>
+  <pre>
+Javascript的语法
+1.区分大小写
+2.弱类型变量 var age=10 var name=”dd”
+3.每行结尾的分号可有可无，但建议还是加上
+4.注释与java相同
+
+变量
+变量是通过var关键字来声明的。（Variable）
+变量的命名规则与java一致
+注释有三种：//   /**/  <!-- -->这个只能注释单行
+2.1 javascript的Hello world
+document.write()是写在文档的最前面
+2.2 slice()、substring()、subtr
+Slice和substring (2,5) 指的是从第3为开始，取（5-2）=3个数，其中slice的参数可以为负
+Substr（2,5）指的是从第3为开始，取5个数。但ECMAscript 没有对该方法进行标准化，因此尽量少使用该方法
+2.3 indexOf()和lastIndexOf(),isNan,typeOf
+indexOf（”i”） //从前往后,i在第几位
+indexOf（”i”,3）可选参数，从第几个字符开始往后找
+lastIndexOf（”i”）   //从后往前,i在第几位
+lastIndexOf(”i”,3)  //从后往前,i在第几位
+如果没找到，则返回-1
+String类型的变量，在Java中，用“”符号表示字符串，用’’表示单个字符。而在javascript中这两种都可以
+Nan（not a number）
+Alert(nan ==nan)返回false,因此不推荐使用nan本身，推荐函数isNan
+Alert(isNanN(“ab”));//返回false
+typeof运算符
+var stmp = “test”;
+alert(typeof stmp); //输出string
+alert(type of 1);//输出number
+此外：还有boolean,undefined,object(如果是引用类型或者null值,null值返回object，这其实是ecmascript的一个错误)
+当声明的变量未初始化的时候，它的值就是undefined.当没有这个变量的时候，typeof 变
+返回的值也是undefined。但是没声明的变量是不能参与计算的。
+当函数无明确返回值时，返回的也是undefined
+Function a(){
+}
+Alert(a() == undefined) //返回true
+Alert(null == undefined)//返回true
+2.4 数值计算
+var mynum1 = 23.345;
+var mynum2 = 45;
+var mynum3 = -34;
+var mynum4 = 9e5;   //科学计数法为 9*10五次方
+var fNumber = 123.456;
+alert(fNumber.toExponential(1));//保留的小数点数 1.2e+2
+alert(fNumber.toExponential(2));//1.23e+2
+.5 布尔值
+var married = true;
+alert("1." + typeof(married));//Boolean
+married = "true";
+alert("2." + typeof(married));//String
+.6 类型转换
+转换成string类型有三种方式
+var a = 3;
+var b = a + "";
+var c = a.toString();
+var d = "student" + a;
+
+toString()
+var a=11;
+<textarea rows="10" cols="120">
+document.write(a.toString(2) + "<br>");//转成2进制
+document.write(a.toString(3) + "<br>");//转成3进制
+如果不是数值，则转换报错
+
+parseInt()
+document.write(parseInt("1red6") + "<br>");//返回1，后面非数值的将全部忽略
+document.write(parseInt("53.5") + "<br>");//返回53
+document.write(parseInt("0xC") + "<br>"); //直接十进制转换12
+document.write(parseInt("isaacshun@gmail.com") + "<br>");//NAN
+document.write(parseInt("011",8) + "<br>");返回9
+document.write(parseInt("011",10) + "<br>");  //指定为十进制返回11
+  </textarea>
+parseFloat()与parseInt()类似
+
+2.7 数组
+var aMap = new Array("China","USA","Britain");
+aMap[20] = "Korea";
+alert(aMap.length + " " + aMap[10] + " " + aMap[20]);//aMap[10]返回undefined
+
+document.write(aMap.join("][") + "br");   //用“][”来连接
+
+
+var sFruit = "apple,pear,peach,orange";
+var aFruit = sFruit.split(",");
+
+var aFruit = ["apple","pear","peach","orange"];
+alert(aFruit.reverse().toString());
+
+var aFruit = ["pear","apple","peach","orange"];
+aFruit.sort();
+
+var stack = new Array();
+stack.push("red");
+stack.push("green");
+stack.push("blue");
+document.write(stack.toString() + "br");
+var vItem = stack.pop(); // blue
+document.write(vItem + "<br>");
+document.write(stack.toString()); // red green
+
+2.8 if语句
+//首先获取用户的一个输入，并用Number()强制转换为数字
+var iNumber = Number(prompt("输入一个5到100之间的数字", ""));//第二个参数,用于显示输入框的默认值
+if(isNaN(iNumber))    //判断输入的是否是数字NaN “Not a Number”
+  document.write("请确认你的输入正确");
+else if(iNumber > 100 || iNumber < 5)   //判断输入的数字范围
+  document.write("你输入的数字范围不在5和100之间");
+else
+  document.write("你输入的数字是:" + iNumber);
+2.9 switch
+
+iWeek = parseInt(prompt("输入1到7之间的整数",""));
+switch(iWeek){
+  case 1:
+    document.write("Monday");
+    break;
+  case 2:
+    document.write("Tuesday");
+    break;
+  case 3:
+    document.write("Wednesday");
+    break;
+  case 4:
+    document.write("Thursday");
+    break;
+  case 5:
+    document.write("Friday");
+    break;
+  case 6:
+    document.write("Saturday");
+    break;
+  case 7:
+    document.write("Sunday");
+    break;
+  default:
+    document.write("Error");
+}
+2.10 while语句
+var i=iSum=0;
+while(i<=100){
+  iSum += i;
+  i++;
+}
+alert(iSum);
+do.while for break continue (与JAVA语法一致)
+2.11 函数
+function ArgsNum(){
+  return arguments.length;
+}
+<textarea rows="5" cols="120">
+document.write(ArgsNum("isaac",25) + "<br>");
+document.write(ArgsNum() + "<br>");
+document.write(ArgsNum(3) + "<br>");
+</textarea>
+从这个例子可以看出，方法可以没有参数，也可以没有返回值，但是照样可以传入参数和返回值。
+2.12 Date对象
+<textarea rows="40" cols="120">
+  
+var myDate1 = new Date(); //运行代码前的时间
+for(var i=0;i<3000000;i++);
+var myDate2 = new Date(); //运行代码后的时间
+document.write(myDate2);
+
+var oMyDate = new Date();
+var iYear = oMyDate.getFullYear();
+var iMonth = oMyDate.getMonth() + 1;  //月份是从0开始的
+var iDate = oMyDate.getDate();
+var iDay = oMyDate.getDay(); //0 为星期日 1 为星期一
+function disDate(oDate, iDate){
+  var ms = oDate.getTime();   //换成毫秒数
+  ms -= iDate*24*60*60*1000;    //计算相差的毫秒数
+  return new Date(ms);      //返回新的时间对象
+}
+var oBeijing = new Date(2008,7,8);
+var iNum = 100;           //前100天
+var oMyDate = disDate(oBeijing, iNum);
+
+2.13 检测浏览器和操作系统
+var sUserAgent = navigator.userAgent;
+//检测Opera、KHTML
+var isOpera = sUserAgent.indexOf("Opera") > -1;
+var isKHTML = sUserAgent.indexOf("KHTML") > -1 || sUserAgent.indexOf("Konqueror") > -1 || sUserAgent.indexOf("AppleWebKit") > -1;
+//检测IE、Mozilla
+var isIE = sUserAgent.indexOf("compatible") > -1 && sUserAgent.indexOf("MSIE") > -1 && !isOpera;
+var isMoz = sUserAgent.indexOf("Gecko") > -1 && !isKHTML;
+//检测操作系统
+var isWin = (navigator.platform == "Win32") || (navigator.platform == "Windows");
+var isMac = (navigator.platform == "Mac68K") || (navigator.platform == "MacPPC") || (navigator.platform == "Macintosh");
+var isUnix = (navigator.platform == "X11") && !isWin && !isMac;
+if(isOpera) document.write("Opera ");
+if(isKHTML) document.write("KHTML ");
+if(isIE) document.write("IE ");
+if(isMoz) document.write("Mozilla ");
+if(isWin) document.write("Windows");
+if(isMac) document.write("Mac");
+if(isUnix) document.write("Unix");
+
+</textarea>
+
+
+1.13Global对象
+
+其实isNan，paraseInt等都是Global对象的方法
+
+EncodeURI.因为有效的URI不能包含某些字符，如空格。这个方法就是用于将这个字符转换成UTF-8编码，使浏览器可以接受他们。
+
+Var suil = “www.oseschool.com/pro file/a.html”;
+Alert(encodeURI(suil));//www.oseschool.com/pro%20file/a.html
+
+即将空格编码成%20
+
+Eval方法
+Eval(“alert(‘hi’)”);
+当解析程序发现eval()时，它将把参数解析成真正的ECMA-script语句，然后插入该语句所在位置。
+
+Global除了有内置方法外，还有很多内置的属性：如：undefined,nan,Array,String,Number，Date，RegExp等
+1.14Math对象
+
+Max方法，min方法,ceil,floor,round,sqrt,random
+
+Max(1,2,3);min(1.2,3.4);
+
+想取到1~10的数据
+Math.floor(Math.random()*10+1)
+2~9的数据
+Math.floor(Math.random()*9+2);
+3.1 getElementsByTagName
+function searchDOM(){
+  //放在函数内，页面加载完成后才用body的onload加载，这时如果把alert这句改成用document.write则会把原内容覆盖掉，因为是后面才执行的
+  var oLi = document.getElementsByTagName("li");
+  //输出长度、标签名称以及某项的文本节点值
+  alert(oLi.length + " " +oLi[0].tagName + " " + oLi[3].childNodes[0].nodeValue);
+  
+  var oUl = document.getElementsByTagName("ul");
+  var oLi2 = oUl[1].getElementsByTagName("li");
+  alert(oLi2.length + " " +oLi2[0].tagName + " " + oLi2[1].childNodes[0].nodeValue);
+}
+<textarea rows="60" cols="120">
+<body onload="searchDOM()">
+  <ul>客户端语言
+    <li>HTML</li>
+    <li>JavaScript</li>
+    <li id="cssLi">CSS</li>
+  </ul>
+<ul>服务器端语言
+    <li>ASP.NET</li>
+    <li>JSP</li>
+    <li>PHP</li>
+</ul>
+</body>
+3.2 getElementById
+var oLi = document.getElementById("cssLi");
+oLi.style .backgroundColor="yellow"
+  //输出标签名称以及文本节点值
+  alert(oLi.tagName + " " + oLi.childNodes[0].nodeValue);
+3.2 getElementsByName
+alert(document.getElementsByName("a").length);
+3.3 访问子节点
+function myDOMInspector(){
+  var oUl = document.getElementById("myList");  //获取<ul>标记
+  var DOMString = "";
+  if(oUl.hasChildNodes()){            //判断是否有子节点
+    var oCh = oUl.childNodes;
+    for(var i=0;i<oCh.length;i++)       //逐一查找
+      DOMString += oCh[i].nodeName + "\n";
+  }
+  alert(DOMString);
+}
+4访问父节点
+nodeName如果为文本节点，则返回#text
+tagName如果为文本节点，则返回undefined
+
+function myDOMInspector(){
+  var myItem = document.getElementById("myDearFood");
+  alert(myItem.parentNode.tagName);
+}
+
+function myDOMInspector(){
+  var myItem = document.getElementById("myDearFood");
+  var parentElm = myItem.parentNode;
+  while(parentElm.className != "colorful" && parentElm != document.body)
+    parentElm = parentElm.parentNode; //一路往上找
+  alert(parentElm.tagName);
+}
+<body onload="myDOMInspector()">
+<div class="colorful">
+<ul>
+    <li>糖醋排骨</li>
+    <li>圆笼粉蒸肉</li>
+    <li>泡菜鱼</li>
+    <li id="myDearFood">板栗烧鸡</li>
+    <li>麻婆豆腐</li>
+  </ul>
+</div>
+</body></textarea>
+
+访问兄弟节点
+function myDOMInspector(){
+  var myItem = document.getElementById("myDearFood");
+  //访问兄弟节点
+  var nextListItem = myItem.nextSibling;
+  var preListItem = myItem.previousSibling;
+  alert(nextListItem.tagName +" "+ preListItem.tagName);
+}
+
+在Firefox中不支持，但是IE中却是支持的。
+3.6 第一个最后一个子节点
+function nextSib(node){
+  var tempLast = node.parentNode.lastChild;
+  //判断是否是最后一个节点，如果是则返回null
+  if(node == tempLast)
+    return null;
+  var tempObj = node.nextSibling;
+  //逐一搜索后面的兄弟节点，直到发现元素节点为止
+  while(tempObj.nodeType!=1 && tempObj.nextSibling!=null)
+    tempObj = tempObj.nextSibling;
+  //三目运算符，如果是元素节点则返回节点本身，否则返回null
+  return (tempObj.nodeType==1)?tempObj:null;
+}
+function prevSib(node){
+  var tempFirst = node.parentNode.firstChild;
+  //判断是否是第一个节点，如果是则返回null
+  if(node == tempFirst)
+    return null;
+  var tempObj = node.previousSibling;
+  //逐一搜索前面的兄弟节点，直到发现元素节点为止
+  while(tempObj.nodeType!=1 && tempObj.previousSibling!=null)
+    tempObj = tempObj.previousSibling;
+  return (tempObj.nodeType==1)?tempObj:null;
+}
+function myDOMInspector(){
+  var myItem = document.getElementById("myDearFood");
+  //获取后一个元素兄弟节点
+  var nextListItem = nextSib(myItem);
+  //获取前一个元素兄弟节点
+  var preListItem = prevSib(myItem);
+  alert("后一项:" + ((nextListItem!=null)?nextListItem.firstChild.nodeValue:null) + " 前一项:" + ((preListItem!=null)?preListItem.firstChild.nodeValue:null) );
+}
+<textarea rows="40" cols="120">
+
+nodeType
+元素element 1
+属性attr  2
+文本text  3
+注释comments  8
+文档document  9
+  <p>
+function showAttr(){
+ var btnShowAttr=document.getElementById("btnShowAttr"); //演示按钮，有很多属性
+var attrs=btnShowAttr.attributes;
+for(var i=0;i<attrs.length ;i++){
+var attr=attrs[i];
+  alert('nodeType:'+attr.nodeType); //attribute 的nodeType=2
+alert('attr:'+attr);
+alert('attr.name:'+attr.name+'='+attr.value);
+
+ }
+
+
+function showDocument(){
+alert('nodeType:'+document.nodeType);  //9
+alert('nodeName:'+document.nodeName);
+alert(document);
+}
+3.7 getAttribute setAttribute
+function myDOMInspector(){
+  //获取图片
+  var myImg = document.getElementsByTagName("img")[0];
+  //获取图片title属性
+  alert(myImg.getAttribute("title"));
+}
+
+function changePic(){
+  //获取图片
+  var myImg = document.getElementsByTagName("img")[0];
+  //设置图片src和title属性
+  myImg.setAttribute("src","02.jpg");
+  myImg.setAttribute("title","紫荆公寓");
+}
+
+
+
+
+</textarea>
+
+
+
+  </p>
+</p>
+  </pre>
+	</div>
+</body>
+</html>

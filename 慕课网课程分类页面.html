@@ -1,0 +1,467 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>慕课网课程分类页面</title>
+<style>
+*
+{
+	margin:0;
+	padding:0;
+	border:none;
+}
+#nav
+{
+	width:100%;
+	height:60px;
+	background-color:#000;
+}
+#left-nav ul li
+{
+	list-style-type:none;
+	float:left;
+	line-height:60px;
+	font-family:"微软雅黑";
+	font-size:16px;
+	width:70px;
+	height:60px;
+	text-align:center;
+	
+}
+.logo
+{
+	float:left;
+	margin-left:20px;
+	margin-top:8px;
+	margin-right:50px;
+}
+#right-nav ul li
+{
+	list-style-type:none;
+	float:right;
+	margin-top:4px;
+	height:60px;
+	width:70px;
+}
+#left-nav ul li a
+{
+	text-decoration:none;
+	color:#fff;
+}
+#left-nav ul li:hover
+{
+	background-color:rgb(54,60,65);
+	
+}
+#right-nav ul .p1{margin-top:7px;}
+#right-nav ul .p2{margin-top:8px;}
+#right-nav ul .p3{margin-top:10px;}
+#right-nav ul .p4{margin-top:12px;}
+#wrap
+{
+	width:1200px;
+	margin:0 auto;
+	background-color:#fff;
+}
+.top
+{
+	width:1200px;
+	height:50px;
+}
+.top h3
+{
+	float:left;
+	margin-top:20px;
+	font-family:"微软雅黑";
+}
+.top span
+{
+	float:right;
+	margin-top:-25px;
+	clear:both;
+}
+#wrap ul li
+{
+	list-style-type:none;
+}
+.one-line,.two-line,.three-line
+{
+	height:50px;
+	width:1200px;
+}
+.one-line
+{
+	margin-top:20px;
+	border-top:1px solid #999;
+	border-bottom:1px solid #CCC;
+}
+.three-line
+{
+	border-top:1px solid #ccc;
+	border-bottom:1px solid #999;
+}
+.one-line ul li,.two-line ul li,.three-line ul li
+{
+	float:left;
+	margin-left:40px;
+	line-height:50px;
+}
+.one-line ul li a,.two-line ul li a,.three-line ul li a
+{
+	text-decoration:none;
+	color:#000;
+	font-family:"微软雅黑";
+	font-size:12px;
+}
+.bar{height:50px;width:1200px;background-color:rgb(249,249,249);}
+.bar span
+{
+	line-height:50px;
+	margin-left:20px;
+	float:left;
+}
+.bar span a
+{
+	text-decoration:none;
+	font-size:12px;
+	font-family:"微软雅黑";
+	color:#000;
+}
+.rightbar a
+{
+	height:20px;
+	width:20px;
+	border:1px solid #000;
+	text-align:center;
+}
+.rightbar a,.rightbar p,.rightbar input
+{
+	float:right;
+	margin-right:20px;
+	cursor:pointer;
+	margin-top:15px;
+}
+.rightbar p
+{
+	font-family:"微软雅黑";
+	font-size:14px;
+}
+#bigbox
+{
+	width:1200px;
+}
+#bigbox .content
+{
+	float:left;
+	width:240px;
+	height:225px;
+	margin-right:80px;
+	margin-top:30px;
+	margin-bottom:20px;
+	font-family:"微软雅黑";
+}
+#bigbox .right-content
+{
+	float:left;
+	width:240px;
+	height:225px;
+	margin-right:0px;
+	margin-top:30px;
+	margin-bottom:20px;
+	font-family:"微软雅黑";
+}
+#bigbox  div:hover
+{
+box-shadow: 5px 5px 3px #888888;
+}
+#bigbox  div:last-child
+{
+	box-shadow:none;
+}
+#bigbox .list
+{
+	height:40px;
+	width:600px;
+	margin:20px auto;
+	clear:both;
+}
+#bigbox .list ul li
+{
+	list-style-type:none;
+	float:left;
+	margin-left:32px;
+	line-height:40px;
+	font-family:"微软雅黑";
+	font-size:14px;
+}
+#bigbox .list ul li a
+{
+	text-decoration:none;
+	color:#999;
+}
+#bigbox .list ul li a:hover
+{
+	text-decoration:underline;
+	color:red;
+}
+#footer
+{
+	height:100px;
+	width:100%;
+	background-color:#000;
+}
+#footer .f-left
+{
+	margin-left:80px;
+}
+#footer .f-left ul li
+{
+	list-style-type:none;
+	float:left;
+	margin-top:25px;
+	margin-left:20px;
+	font-family:"微软雅黑";
+}
+#footer .f-left ul li a
+{
+	text-decoration:none;
+	color:#CCC;
+	font-size:12px;
+}
+#footer .f-right a
+{
+	float:right;
+	margin-top:30px;
+	margin-right:10px;
+}
+#footer p
+{
+	color:#666;
+	clear:both;
+	font-family:"微软雅黑";
+	font-size:12px;
+	margin-left:100px;
+}
+#wrap ul li a:hover
+{
+	color:red;
+}
+</style>
+</head>
+
+<body>
+<div id="contianer">
+  <div id="nav">
+    <a class="logo" href="www.imooc.com"><img src="imooc img/logo.png" alt=""/></a>
+      <div id="left-nav" >
+        <ul>
+          <li><a href="#">首页</a></li>
+          <li><a href="#">路径</a></li>
+          <li><a href="#">实战</a></li>
+          <li><a href="#">猿问</a></li>
+          <li><a href="#">手记</a></li>
+        </ul>
+      </div>
+      <div id="right-nav">
+        <ul>
+          <li><a href="#"><img src="imooc img/user.png" alt=""/></a></li>
+          <li class="p1"><a href="#"><img src="imooc img/phone.png" alt=""/></a></li>
+          <li class="p2"><a href="#"><img src="imooc img/ring.png" alt=""/></a></li>
+          <li class="p3"><a href="#"><img src="imooc img/mail.png" alt=""/></a></li>
+          <li class="p4"><a href="#"><img src="imooc img/search.png" alt=""/></a></li>
+        </ul>
+      </div>
+  </div>
+  <div id="wrap">
+    <div class="top">
+     <h3>全部课程</h3>
+     <span><a href="#"><img src="imooc img/D%@@1333C[M{J2OT37LQ3O0.png"/></a></span>
+     </div>
+        <div class="one-line">
+          <ul>
+            <li><a style="margin-left:-20px;">方向:</a></li>
+            <li><a href="#">全部</a></li>
+            <li ><a  style="height:20px;width:60px;background-color:red;display:block;text-align:center;margin-top:15px;line-height:20px;color:#fff;"href="#">前端开发</a></li>
+            <li><a href="#">后端开发</a></li>
+            <li><a href="#">移动开发</a></li>
+            <li><a href="#">数据处理</a></li>
+            <li><a href="#">图像处理</a></li>
+            
+          </ul>
+        </div>
+        <div class="two-line">
+          <ul>
+            <li><a style="margin-left:-20px;">分类:</a></li>
+            <li><a style="height:20px;width:35px;background-color:red;display:block;text-align:center;margin-top:15px;line-height:20px;color:#FFF;" href="#">全部</a></li>
+            <li><a href="#">css/html</a></li>
+            <li><a href="#">css3</a></li>
+            <li><a href="#">html5</a></li>
+            <li><a href="#">javascript</a></li>
+            <li><a href="#">jqurey</a></li>
+            <li><a href="#">webapp</a></li>
+            <li><a href="#">node.js</a></li>
+            <li><a href="#">bootstrap</a></li>
+            <li><a href="#">react.js</a></li>
+            <li><a href="#">anjular.js</a></li>
+            <li><a href="#">前端工具</a></li> 
+          </ul>
+        </div>
+        <div class="three-line">
+          <ul>
+            <li><a style="margin-left:-20px;">难度:</a></li>
+            <li><a style="height:20px;width:35px;background-color:red;display:block;text-align:center;margin-top:15px;line-height:20px;color:#fff;" href="#">全部</a></li>
+            <li><a href="#">初级</a></li>
+            <li><a href="#">中级</a></li>
+            <li><a href="#">高级</a></li>
+          
+          </ul>
+        </div>
+        <div class="bar">
+        <span><a href="#">最新</a><a style="color:#999;margin-left:50px;" href="#">最热</a></span>
+        <div class="rightbar">
+          <a>&lt;</a>
+          <a>&gt;</a>
+          <p>7/10</p>
+          <p>隐藏已参加课程</p>
+          <input type="checkbox" style="width:20px;height:20px;border:1px solid #000;"  />
+        </div>
+        </div>
+        <div id="bigbox">
+        <div class="content">
+        <a><img src="imooc img/curse.png"/></a>
+        <h5 style="margin-top:10px;margin-buttom:10px;"><strong>CSS之深入理解margin</strong></h5>
+        <p style="color:#999;margin-top:10px;margin-buttom:10px;font-size:12px;">深入理解css中margin的属性</p>
+        <p style="font-size:12px;color:#999;margin-top:10px;"><span style="margin-right:30px;">更新完毕</span><span>9999人学习</span></p>
+        </div>
+        <div class="content">
+        <a><img src="imooc img/curse.png"/></a>
+        <h5 style="margin-top:10px;margin-buttom:10px;"><strong>CSS之深入理解margin</strong></h5>
+        <p style="color:#999;margin-top:10px;margin-buttom:10px;font-size:12px;">深入理解css中margin的属性</p>
+        <p style="font-size:12px;color:#999;margin-top:10px;"><span style="margin-right:30px;">更新完毕</span><span>9999人学习</span></p>
+        </div>
+        <div class="content">
+        <a><img src="imooc img/curse.png"/></a>
+        <h5 style="margin-top:10px;margin-buttom:10px;"><strong>CSS之深入理解margin</strong></h5>
+        <p style="color:#999;margin-top:10px;margin-buttom:10px;font-size:12px;">深入理解css中margin的属性</p>
+        <p style="font-size:12px;color:#999;margin-top:10px;"><span style="margin-right:30px;">更新完毕</span><span>9999人学习</span></p>
+        </div>
+        <div class="right-content">
+        <a><img src="imooc img/curse.png"/></a>
+        <h5 style="margin-top:10px;margin-buttom:10px;"><strong>CSS之深入理解margin</strong></h5>
+        <p style="color:#999;margin-top:10px;margin-buttom:10px;font-size:12px;">深入理解css中margin的属性</p>
+        <p style="font-size:12px;color:#999;margin-top:10px;"><span style="margin-right:30px;">更新完毕</span><span>9999人学习</span></p>
+        </div>
+        <div class="content">
+        <a><img src="imooc img/curse.png"/></a>
+        <h5 style="margin-top:10px;margin-buttom:10px;"><strong>CSS之深入理解margin</strong></h5>
+        <p style="color:#999;margin-top:10px;margin-buttom:10px;font-size:12px;">深入理解css中margin的属性</p>
+        <p style="font-size:12px;color:#999;margin-top:10px;"><span style="margin-right:30px;">更新完毕</span><span>9999人学习</span></p>
+        </div>
+        <div class="content">
+        <a><img src="imooc img/curse.png"/></a>
+        <h5 style="margin-top:10px;margin-buttom:10px;"><strong>CSS之深入理解margin</strong></h5>
+        <p style="color:#999;margin-top:10px;margin-buttom:10px;font-size:12px;">深入理解css中margin的属性</p>
+        <p style="font-size:12px;color:#999;margin-top:10px;"><span style="margin-right:30px;">更新完毕</span><span>9999人学习</span></p>
+        </div>
+        <div class="content">
+        <a><img src="imooc img/curse.png"/></a>
+        <h5 style="margin-top:10px;margin-buttom:10px;"><strong>CSS之深入理解margin</strong></h5>
+        <p style="color:#999;margin-top:10px;margin-buttom:10px;font-size:12px;">深入理解css中margin的属性</p>
+        <p style="font-size:12px;color:#999;margin-top:10px;"><span style="margin-right:30px;">更新完毕</span><span>9999人学习</span></p>
+        </div>
+        <div class="right-content">
+        <a><img src="imooc img/curse.png"/></a>
+        <h5 style="margin-top:10px;margin-buttom:10px;"><strong>CSS之深入理解margin</strong></h5>
+        <p style="color:#999;margin-top:10px;margin-buttom:10px;font-size:12px;">深入理解css中margin的属性</p>
+        <p style="font-size:12px;color:#999;margin-top:10px;"><span style="margin-right:30px;">更新完毕</span><span>9999人学习</span></p>
+        </div>
+        <div class="content">
+        <a><img src="imooc img/curse.png"/></a>
+        <h5 style="margin-top:10px;margin-buttom:10px;"><strong>CSS之深入理解margin</strong></h5>
+        <p style="color:#999;margin-top:10px;margin-buttom:10px;font-size:12px;">深入理解css中margin的属性</p>
+        <p style="font-size:12px;color:#999;margin-top:10px;"><span style="margin-right:30px;">更新完毕</span><span>9999人学习</span></p>
+        </div>
+        <div class="content">
+        <a><img src="imooc img/curse.png"/></a>
+        <h5 style="margin-top:10px;margin-buttom:10px;"><strong>CSS之深入理解margin</strong></h5>
+        <p style="color:#999;margin-top:10px;margin-buttom:10px;font-size:12px;">深入理解css中margin的属性</p>
+        <p style="font-size:12px;color:#999;margin-top:10px;"><span style="margin-right:30px;">更新完毕</span><span>9999人学习</span></p>
+        </div>
+        <div class="content">
+        <a><img src="imooc img/curse.png"/></a>
+        <h5 style="margin-top:10px;margin-buttom:10px;"><strong>CSS之深入理解margin</strong></h5>
+        <p style="color:#999;margin-top:10px;margin-buttom:10px;font-size:12px;">深入理解css中margin的属性</p>
+        <p style="font-size:12px;color:#999;margin-top:10px;"><span style="margin-right:30px;">更新完毕</span><span>9999人学习</span></p>
+        </div>
+        <div class="right-content">
+        <a><img src="imooc img/curse.png"/></a>
+        <h5 style="margin-top:10px;margin-buttom:10px;"><strong>CSS之深入理解margin</strong></h5>
+        <p style="color:#999;margin-top:10px;margin-buttom:10px;font-size:12px;">深入理解css中margin的属性</p>
+        <p style="font-size:12px;color:#999;margin-top:10px;"><span style="margin-right:30px;">更新完毕</span><span>9999人学习</span></p>
+        </div>
+        <div class="content">
+        <a><img src="imooc img/curse.png"/></a>
+        <h5 style="margin-top:10px;margin-buttom:10px;"><strong>CSS之深入理解margin</strong></h5>
+        <p style="color:#999;margin-top:10px;margin-buttom:10px;font-size:12px;">深入理解css中margin的属性</p>
+        <p style="font-size:12px;color:#999;margin-top:10px;"><span style="margin-right:30px;">更新完毕</span><span>9999人学习</span></p>
+        </div>
+        <div class="content">
+        <a><img src="imooc img/curse.png"/></a>
+        <h5 style="margin-top:10px;margin-buttom:10px;"><strong>CSS之深入理解margin</strong></h5>
+        <p style="color:#999;margin-top:10px;margin-buttom:10px;font-size:12px;">深入理解css中margin的属性</p>
+        <p style="font-size:12px;color:#999;margin-top:10px;"><span style="margin-right:30px;">更新完毕</span><span>9999人学习</span></p>
+        </div>
+        <div class="content">
+        <a><img src="imooc img/curse.png"/></a>
+        <h5 style="margin-top:10px;margin-buttom:10px;"><strong>CSS之深入理解margin</strong></h5>
+        <p style="color:#999;margin-top:10px;margin-buttom:10px;font-size:12px;">深入理解css中margin的属性</p>
+        <p style="font-size:12px;color:#999;margin-top:10px;"><span style="margin-right:30px;">更新完毕</span><span>9999人学习</span></p>
+        </div>
+        <div class="right-content">
+        <a><img src="imooc img/curse.png"/></a>
+        <h5 style="margin-top:10px;margin-buttom:10px;"><strong>CSS之深入理解margin</strong></h5>
+        <p style="color:#999;margin-top:10px;margin-buttom:10px;font-size:12px;">深入理解css中margin的属性</p>
+        <p style="font-size:12px;color:#999;margin-top:10px;"><span style="margin-right:30px;">更新完毕</span><span>9999人学习</span></p>
+        </div>
+        <div class="list">
+          <ul>
+          <li><a href="#">首页</a></li>
+          <li><a href="#">上一页</a></li>
+          <li><a href="#">1</a></li>
+          <li><a style="display:block;height:35px;width:35px;background-color:red;margin-top:2px;color:#fff;text-align:center;" href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li><a href="#">6</a></li>
+          <li><a href="#">7</a></li>
+          <li><a href="#">下一页</a></li>
+          <li><a href="#">尾页</a></li>
+          </ul>
+        </div>
+        
+</div>
+</div>
+<div id="footer">
+  <div class="f-left">
+    <ul>
+      <li> <a href="#">网站首页</a></li>
+      <li> <a href="#">企业合作</a></li>
+      <li> <a href="#">人才招聘</a></li>
+      <li> <a href="#">联系我们</a></li>
+      <li> <a href="#">关于我们</a></li>
+      <li> <a href="#">合作专区</a></li>
+      <li> <a href="#">讲师招募</a></li>
+      <li> <a href="#">意见反馈</a></li>
+      <li> <a href="#">友情链接</a></li>
+    </ul>
+  </div>
+  <div class="f-right">
+  <a style="margin-right:100px;"><img src="imooc img/`WQFHKP5JJ1M6MIVJN7XXD3.png"/></a>
+  <a><img src="imooc img/FYP(46HW({JXWM5O4F`X~F4.png"/></a>
+  <a><img src="imooc img/ZCJSM06EGWKI$7(`J6IOJXX.png"/></a>
+  </div>
+  <p>Copyright © 2016 imooc.com All Rights Reserved | 京ICP备 13046642号-2</p>
+</div>
+</div>
+</body>
+</html>
